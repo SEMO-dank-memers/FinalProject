@@ -8,7 +8,8 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	}
 	
 	void Update () {
-		input = Input.GetAxis("Horizontal");
+        input = Input.GetAxis("Horizontal");
+        cacheRB.AddTorque(-10); //Constantly add force, need to make it where player initially launches boulder
 	}
 
 	void FixedUpdate() {
