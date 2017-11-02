@@ -45,6 +45,9 @@ public class ZippyTerrain2DEndless : MonoBehaviour {
 		ZippyTerrain2D r = groundContainer.GetChild(Random.Range(0, groundContainer.childCount)).GetComponent<ZippyTerrain2D>(); ;
 		r.transform.parent = transform;
 		r.gameObject.SetActive(true);
+		foreach (Transform child in r.transform) { //added so that the coins will respawn after being set to inactive from the rock picking them up
+			child.gameObject.SetActive (true);
+		}
 		return r;
 	}
 
@@ -61,7 +64,7 @@ public class ZippyTerrain2DEndless : MonoBehaviour {
 			t[i].gameObject.SetActive(false);
 		}
 	}
-
+		
 	void Update () {
 		if(follow.position.x >= rightGround.cacheTransform.position.x) {
 			// Left ground is no longer needed, it is will be replaced by the middle ground.
