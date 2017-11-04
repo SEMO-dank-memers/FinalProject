@@ -15,10 +15,9 @@ public class RestartGame : MonoBehaviour {
 		DontDestroyOnLoad (this);
 		if (objectInstance == null) {
 			objectInstance = gameObject;
-		} 
+		}
 		else {
-			DestroyObject (gameObject);
-			//have to reset up the play button here in order for the restart to work twice.
+			//DestroyObject (gameObject);
 			playerToSave.GetComponent<ZippyTerrain2DRollingBall> ().upwardPushLevel = currentUpwardPushLevel;
 			playerToSave.GetComponent<ZippyTerrain2DRollingBall> ().forwardPushLevel = currentForwardPushLevel;
 		}
@@ -30,6 +29,7 @@ public class RestartGame : MonoBehaviour {
 		currentForwardPushLevel = playerToSave.GetComponent<ZippyTerrain2DRollingBall> ().forwardPushLevel;
 		currentUpwardPushLevel = playerToSave.GetComponent<ZippyTerrain2DRollingBall> ().upwardPushLevel;
 		SceneManager.LoadScene ("Main");
+		DestroyObject (gameObject);
 	}
 
 	// Update is called once per frame

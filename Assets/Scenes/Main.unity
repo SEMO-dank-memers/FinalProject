@@ -52513,6 +52513,18 @@ Prefab:
       propertyPath: initialUpwardPushes
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11422826, guid: 35e3119dd4efad84f86169b436fd8a18, type: 2}
+      propertyPath: upwardPushes
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422826, guid: 35e3119dd4efad84f86169b436fd8a18, type: 2}
+      propertyPath: forwardPushLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422826, guid: 35e3119dd4efad84f86169b436fd8a18, type: 2}
+      propertyPath: upwardPushLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35e3119dd4efad84f86169b436fd8a18, type: 2}
   m_IsPrefabParent: 0
