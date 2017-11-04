@@ -48416,7 +48416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerToSave: {fileID: 1846054252}
-  playButton: {fileID: 811212158}
+  playButton: {fileID: 836278932}
 --- !u!4 &1629043344
 Transform:
   m_ObjectHideFlags: 0
@@ -52524,6 +52524,10 @@ Prefab:
     - target: {fileID: 11422826, guid: 35e3119dd4efad84f86169b436fd8a18, type: 2}
       propertyPath: upwardPushLevel
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422826, guid: 35e3119dd4efad84f86169b436fd8a18, type: 2}
+      propertyPath: initialPushForce
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35e3119dd4efad84f86169b436fd8a18, type: 2}
