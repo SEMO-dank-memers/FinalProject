@@ -38,15 +38,19 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	void Start () {
 		cacheRB = GetComponent<Rigidbody2D>();
 		cacheRB.AddForce(new Vector2(initialForce, 0.0f), ForceMode2D.Impulse);
+		forwardPushLevel = playerStats.currentForwardPushLevel;
+		upwardPushLevel = playerStats.currentUpwardPushLevel;
 		forwardPushes = initialForwardPushes * forwardPushLevel;
 		upwardPushes = initialUpwardPushes * upwardPushLevel;
+		playerMoney = playerStats.playerMoney;
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
 		if (coll.gameObject.tag == "Coin") {
 			coll.gameObject.SetActive (false);
 		}
-		playerMoney = playerMoney + 5;
+		playerStats.playerMoney = playerStats.playerMoney + 5;
+		playerMoney = playerMoney + 5; // this is just here for display at this point
 	}
 
 	IEnumerator CountDown (){ //this triggers the end of the game
