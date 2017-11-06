@@ -14,9 +14,9 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	[Tooltip("Initial force applied by all of the player's pushes, the upgrade level multiples this value")]
 	[Range(5.0f, 30.0f)]
 	public float initialPushForce; // the force applied when the player uses a wind push, can be increased with the upgrades
-	[Tooltip("Initial amount of forward pushes, this is multiplied in order to determine the number of pushes gained per level")]
+	[Tooltip("Initial amount of forward pushes, this is multiplied by upwardPushLevel in order to determine the number of pushes at the current level")]
 	public int initialForwardPushes;
-	[Tooltip("Initial amount of upward pushes, this is multiplied in order to determine the number of pushes gained per level")]
+	[Tooltip("Initial amount of upward pushes, this is multiplied by forwardPushLevel in order to determine the number of pushes at the current level")]
 	public int initialUpwardPushes;
 	[Tooltip("The current money of the player")]
 	public int playerMoney; //game money, making public so that other events can increase it
@@ -56,7 +56,7 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	IEnumerator CountDown (){ //this triggers the end of the game
 		yield return new WaitForSecondsRealtime (5);
 		gameOver = true;
-		gameCanvas.transform.GetChild (1).GetComponent<Text>().text = "  Player Money: " + playerMoney; //god this is bad
+		gameCanvas.transform.FindChild("Money").GetComponent<Text>().text = "  Player Money: " + playerMoney; //god this is bad
 		gameCanvas.gameObject.SetActive (true);
 	}
 

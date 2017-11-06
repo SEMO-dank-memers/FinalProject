@@ -24,12 +24,15 @@ public class ForwardPushUpgrader : MonoBehaviour {
 
 	public void UpgradeForwardPushLevel(){
 		if (player.GetComponent<ZippyTerrain2DRollingBall> ().playerMoney >= requiredMoney) {
-			player.GetComponent<ZippyTerrain2DRollingBall> ().forwardPushLevel = player.GetComponent<ZippyTerrain2DRollingBall> ().forwardPushLevel + 1;
-			playerStats.currentForwardPushLevel = playerStats.currentForwardPushLevel + 1;
+			player.GetComponent<ZippyTerrain2DRollingBall> ().forwardPushLevel += 1;
+			playerStats.currentForwardPushLevel += 1;
+			player.GetComponent<ZippyTerrain2DRollingBall> ().playerMoney -= requiredMoney;
+			playerStats.playerMoney = player.GetComponent<ZippyTerrain2DRollingBall> ().playerMoney;
 			upGradeLevel++;
 			Lights[upGradeLevel-1].color = c;
 			requiredMoney = requiredMoney * 2;
 			thisButton.text = "Forward Push: " + requiredMoney;
+
 		}
 	}
 }
