@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ForwardPushUpgrader : MonoBehaviour {
 	public GameObject player; 
-	private static int upGradeLevel;
+	private static int upgradeLevel;
 	public Image[] Lights = new Image[5];
 	private Color c = Color.blue;
 	private static int requiredMoney = 80; 
@@ -14,7 +14,7 @@ public class ForwardPushUpgrader : MonoBehaviour {
 
 	void Start(){
 		
-		int temp = upGradeLevel;
+		int temp = upgradeLevel;
 		while (temp > 0) {
 			Lights [temp - 1].color = c;
 			temp--;
@@ -23,13 +23,12 @@ public class ForwardPushUpgrader : MonoBehaviour {
 	}
 
 	public void UpgradeForwardPushLevel(){
-		if (player.GetComponent<ZippyTerrain2DRollingBall> ().playerMoney >= requiredMoney) {
+		if (playerStats.playerMoney >= requiredMoney) {
 			player.GetComponent<ZippyTerrain2DRollingBall> ().forwardPushLevel += 1;
 			playerStats.currentForwardPushLevel += 1;
-			player.GetComponent<ZippyTerrain2DRollingBall> ().playerMoney -= requiredMoney;
-			playerStats.playerMoney = player.GetComponent<ZippyTerrain2DRollingBall> ().playerMoney;
-			upGradeLevel++;
-			Lights[upGradeLevel-1].color = c;
+			playerStats.playerMoney -= requiredMoney;
+			upgradeLevel++;
+			Lights[upgradeLevel-1].color = c;
 			requiredMoney = requiredMoney * 2;
 			thisButton.text = "Forward Push: " + requiredMoney;
 

@@ -18,8 +18,6 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	public int initialForwardPushes;
 	[Tooltip("Initial amount of upward pushes, this is multiplied by forwardPushLevel in order to determine the number of pushes at the current level")]
 	public int initialUpwardPushes;
-	[Tooltip("The current money of the player")]
-	public int playerMoney; //game money, making public so that other events can increase it
 
 	[Header("Upgradeable Traits")]
 	[Tooltip("The number of forward pushes the player can use")]
@@ -42,7 +40,6 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 		upwardPushLevel = playerStats.currentUpwardPushLevel;
 		forwardPushes = initialForwardPushes * forwardPushLevel;
 		upwardPushes = initialUpwardPushes * upwardPushLevel;
-		playerMoney = playerStats.playerMoney;
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
@@ -50,13 +47,11 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 			coll.gameObject.SetActive (false);
 		}
 		playerStats.playerMoney = playerStats.playerMoney + 5;
-		playerMoney = playerMoney + 5; // this is just here for display at this point
 	}
 
 	IEnumerator CountDown (){ //this triggers the end of the game
 		yield return new WaitForSecondsRealtime (5);
 		gameOver = true;
-		gameCanvas.transform.FindChild("Money").GetComponent<Text>().text = "  Player Money: " + playerMoney; //god this is bad
 		gameCanvas.gameObject.SetActive (true);
 	}
 
