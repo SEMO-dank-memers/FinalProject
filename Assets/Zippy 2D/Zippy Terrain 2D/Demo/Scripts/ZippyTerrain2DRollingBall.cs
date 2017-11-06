@@ -24,11 +24,11 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	[Header("Upgradeable Traits")]
 	[Tooltip("The number of forward pushes the player can use")]
 	public int forwardPushes; //number of times the player can push the rock forward
-	[Tooltip("The current upgrade level of the player's forward pushs. This is the amount the initialForwardForce is multiplied by.")]
+	[Tooltip("The current upgrade level of the player's forward pushs. This is the amount the initialPushForce and initialForwardPushes is multiplied by.")]
 	public int forwardPushLevel; //current upgrade level of the player's forward Pushes;
 	[Tooltip("The number of upward pushes the player can use")]
 	public int upwardPushes; //number of times the player can push the rock upward
-	[Tooltip("The current upgrade level of the player's upward pushs. This is the amount the initialForwardForce is multiplied by.")]
+	[Tooltip("The current upgrade level of the player's upward pushs. This is the amount the initialPushForce and initialUpwardPushes is multiplied by.")]
 	public int upwardPushLevel; //current upgrade level of the player's upward pushes;
 	//
 
