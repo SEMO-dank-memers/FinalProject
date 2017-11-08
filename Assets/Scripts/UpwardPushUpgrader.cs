@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ForwardPushUpgrader : MonoBehaviour {
+public class UpwardPushUpgrader : MonoBehaviour {
 	[Tooltip("The rock (ZippyTerrain2D Ball)")]
 	public GameObject player; 
 	private static int upgradeLevel;
@@ -15,24 +15,24 @@ public class ForwardPushUpgrader : MonoBehaviour {
 	public Text thisButton;
 
 	void Start(){
-		
+
 		int temp = upgradeLevel;
 		while (temp > 0) {
 			Lights [temp - 1].color = c;
 			temp--;
 		}
-		thisButton.text = "Forward Push: " + requiredMoney;
+		thisButton.text = "Upward Push: " + requiredMoney;
 	}
 
 	public void UpgradeForwardPushLevel(){
 		if (playerStats.playerMoney >= requiredMoney) {
-			player.GetComponent<ZippyTerrain2DRollingBall> ().forwardPushLevel += 1;
-			playerStats.currentForwardPushLevel += 1;
+			player.GetComponent<ZippyTerrain2DRollingBall> ().upwardPushLevel += 1;
+			playerStats.currentUpwardPushLevel += 1;
 			playerStats.playerMoney -= requiredMoney;
 			upgradeLevel++;
 			Lights[upgradeLevel-1].color = c;
 			requiredMoney = requiredMoney * 2;
-			thisButton.text = "Forward Push: " + requiredMoney;
+			thisButton.text = "Upward Push: " + requiredMoney;
 
 		}
 	}
