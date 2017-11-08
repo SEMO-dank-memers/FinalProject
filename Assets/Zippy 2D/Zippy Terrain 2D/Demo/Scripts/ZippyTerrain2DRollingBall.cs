@@ -7,7 +7,9 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 
 	[Header("Static/Starting Traits")]
 	[Tooltip("Canvas that contains the Upgrade GUI in order to display when the game ends")]
-	public Canvas gameCanvas;
+	public Canvas endGameCanvas;
+	[Tooltip("Canvas that contains UI elements visable during the game")]
+	public Canvas inGameCanvas;
 	[Range(2.0f, 10.0f)] // bounds the inital force for testing and tweaking between these values
 	[Tooltip("Initial force applied to the rock when the game starts")]
 	public float initialForce; // the initial force applied to the rock when the game starts
@@ -52,7 +54,8 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	IEnumerator CountDown (){ //this triggers the end of the game
 		yield return new WaitForSecondsRealtime (5);
 		gameOver = true;
-		gameCanvas.gameObject.SetActive (true);
+		endGameCanvas.gameObject.SetActive (true);
+		inGameCanvas.gameObject.SetActive (false);
 	}
 
 	void FixedUpdate() {
