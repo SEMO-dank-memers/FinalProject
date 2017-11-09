@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public static class playerStats{
 	public static int currentForwardPushLevel = 1;
 	public static int currentUpwardPushLevel = 1;
+	public static int currentForwardPushes = 3;
+	public static int currentUpwardPushes = 3;
 	public static int playerMoney = 0;
+	public static Vector3 playerSize = new Vector3(0.83f, 0.83f, 1.0f);
 };
 
 public class RestartGame : MonoBehaviour {

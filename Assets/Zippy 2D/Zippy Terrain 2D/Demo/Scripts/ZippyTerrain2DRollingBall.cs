@@ -37,11 +37,14 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	bool gameOver = false;
 	void Start () {
 		cacheRB = GetComponent<Rigidbody2D>();
+		//initial push on the rock
 		cacheRB.AddForce(new Vector2(initialForce, 0.0f), ForceMode2D.Impulse);
+		//load all the rock stats earned in previous runs
 		forwardPushLevel = playerStats.currentForwardPushLevel;
 		upwardPushLevel = playerStats.currentUpwardPushLevel;
-		forwardPushes = initialForwardPushes * forwardPushLevel;
-		upwardPushes = initialUpwardPushes * upwardPushLevel;
+		this.transform.localScale = new Vector3 (playerStats.playerSize.x, playerStats.playerSize.y, playerStats.playerSize.z);
+		playerStats.currentForwardPushes = initialForwardPushes * forwardPushLevel;
+		playerStats.currentUpwardPushes = initialUpwardPushes * upwardPushLevel;
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
@@ -60,18 +63,18 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (Input.GetKeyDown("d")) {
-			if (forwardPushes != 0) {
+			if (playerStats.currentForwardPushes != 0) {
 				cacheRB.AddForce (new Vector2 (initialPushForce*forwardPushLevel, 0.0f), ForceMode2D.Impulse);
-				forwardPushes--;
+				playerStats.currentForwardPushes--;
 			}
 		}
 		if (Input.GetKeyDown("w")) {
-			if (upwardPushes != 0) {
+			if (playerStats.currentUpwardPushes != 0) {
 				cacheRB.AddForce (new Vector2 (0.0f, initialPushForce*upwardPushLevel), ForceMode2D.Impulse);
-				upwardPushes--;
+				playerStats.currentUpwardPushes--;
 			}
 		}
-		if ((upwardPushes == 0) && (forwardPushes == 0) && (!gameOver)) { //if we are out of ways to speed up the rock and its going backwards then the game is over
+		if ((playerStats.currentUpwardPushes == 0) && (playerStats.currentForwardPushes == 0) && (!gameOver)) { //if we are out of ways to speed up the rock and its going backwards then the game is over
 			if((cacheRB.velocity.x == 0) || (cacheRB.velocity.x < Vector2.zero.x)){
 				StartCoroutine ("CountDown");
 			}
