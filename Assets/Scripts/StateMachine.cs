@@ -38,7 +38,7 @@ public class StateMachine : MonoBehaviour{
             this.isBrave = b;
             this.isAfraid = Fuzzy.NOT(isBrave);
         }
-        public void setBravery(Role role)
+        public void SetBravery(Role role)
         {
             //threshold values are set according the Role
             float randomNum = Random.Range(0.0f, 10.0f); //using values of 0 - 10 to keep simple-ish
@@ -68,7 +68,7 @@ public class StateMachine : MonoBehaviour{
             this.isBrave = Fuzzy.Linear(randomNum, lowerThreshold, upperThreshold);
             this.isAfraid = Fuzzy.NOT(isBrave); //same as NOT(isBrave)
         }
-        Enemy createEnemy()
+        Enemy GenerateEnemy()
         {
             Enemy enemy = new Enemy();
             float rand = Random.Range(0.0f, 10.0f);
@@ -76,8 +76,60 @@ public class StateMachine : MonoBehaviour{
             else if (rand < 7.5f && rand >= 5.0f) enemy.role = Role.BRAWLER;
             else if (rand < 10.0f && rand >= 7.5f) enemy.role = Role.NINJA;
             else enemy.role = Role.TROLL;
-            enemy.setBravery(enemy.role);
+            enemy.SetBravery(enemy.role);
             return enemy;
+        }
+	void Idle()
+        {
+            //just stands still and detects if a rock is nearby
+            //if the rock is very far away, as in this enemy is now far off screen...
+            //we should call a destructor to get rid of this ai so we're not taking up excess resources
+            //Destroy(this);
+        }
+        void Attack()
+        {
+            //gets the position of the rock and moves towards it. 
+            //when at a close distance, throw a punch.
+        }
+        void Punch()
+        {
+            //uses a punching animation, and reduces momentum more significantly than a throw if it hits.
+        }
+        void Run()
+        {
+            /* gets position of the rock and moves away from it, might need to be careful to not
+             * let them move into the air. They need to stay on the ground/
+             * maybe have different speeds depending on the role
+             */
+        }
+        void Throw()
+        {
+            //gets current position of the rock and throws a pebble in that direction
+            //pebbles reduce momentum by a small amount
+        }
+        void Jump()
+        {
+            //needs to move up and fall back down, should have gravity applied
+        }
+        void Crouch()
+        {
+            //changes to a crouching sprite, which gives it a smaller hitbox
+        }
+        void Panic()
+        {
+            //changes sprite to a panicking sprite, and just stands still
+        }
+        void Fly()
+        {
+            //just moves to the left in a straight line
+        }
+        void Charge()
+        {
+            //bird charges towards the rock
+        }
+        float GetDistance(float rockX, float rockY, float aiX, float aiY)
+        {
+            return Mathf.Sqrt(((rockX - aiX)*(rockX - aiX)) + ((rockY - aiY)*(rockY-aiY)));
         }
     }
 }
