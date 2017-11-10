@@ -35,6 +35,9 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	Rigidbody2D cacheRB;
 	float input;
 	bool gameOver = false;
+	bool triggerUpwardPush = false;
+	bool triggerForwardPush = false;
+
 	void Start () {
 		cacheRB = GetComponent<Rigidbody2D>();
 		//initial push on the rock
@@ -61,17 +64,28 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 		inGameCanvas.gameObject.SetActive (false);
 	}
 
+	void Update(){
+		if(Input.GetKeyDown("d")){
+			triggerForwardPush = true; //Input.GetKeyDown relies on Update() so we pool the result for use when physics calcs are done in FixedUpdate, this prevents input loss
+		}
+		if(Input.GetKeyDown("w")){
+			triggerUpwardPush = true;
+		}
+	}
+
 	void FixedUpdate() {
-		if (Input.GetKeyDown("d")) {
+		if (triggerForwardPush) {
 			if (playerStats.currentForwardPushes != 0) {
 				cacheRB.AddForce (new Vector2 (initialPushForce*forwardPushLevel, 0.0f), ForceMode2D.Impulse);
 				playerStats.currentForwardPushes--;
+				triggerForwardPush = false;
 			}
 		}
-		if (Input.GetKeyDown("w")) {
+		if (triggerUpwardPush) {
 			if (playerStats.currentUpwardPushes != 0) {
 				cacheRB.AddForce (new Vector2 (0.0f, initialPushForce*upwardPushLevel), ForceMode2D.Impulse);
 				playerStats.currentUpwardPushes--;
+				triggerUpwardPush = false;
 			}
 		}
 		if ((playerStats.currentUpwardPushes == 0) && (playerStats.currentForwardPushes == 0) && (!gameOver)) { //if we are out of ways to speed up the rock and its going backwards then the game is over
