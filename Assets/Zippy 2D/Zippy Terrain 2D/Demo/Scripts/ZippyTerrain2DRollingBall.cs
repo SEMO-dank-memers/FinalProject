@@ -13,16 +13,6 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	[Range(2.0f, 10.0f)] // bounds the inital force for testing and tweaking between these values
 	[Tooltip("Initial force applied to the rock when the game starts")]
 	public float initialForce; // the initial force applied to the rock when the game starts
-
-	[Header("Upgradeable Traits")]
-	[Tooltip("The number of forward pushes the player can use")]
-	public int forwardPushes; //number of times the player can push the rock forward
-	//[Tooltip("The current upgrade level of the player's forward pushs. This is the amount the initialUpwardPushes is multiplied by.")]
-	//public int forwardPushLevel; //current upgrade level of the player's upward pushes;
-	[Tooltip("The number of upward pushes the player can use")]
-	public int upwardPushes; //number of times the player can push the rock upward
-	//[Tooltip("The current upgrade level of the player's upward pushs. This is the amount the initialUpwardPushes is multiplied by.")]
-	//public int upwardPushLevel; //current upgrade level of the player's upward pushes;
 	//
 
 	Rigidbody2D cacheRB;
@@ -35,9 +25,6 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 		cacheRB = GetComponent<Rigidbody2D>();
 		//initial push on the rock
 		cacheRB.AddForce(new Vector2(initialForce, 0.0f), ForceMode2D.Impulse);
-		//load all the rock stats earned in previous runs
-		//forwardPushLevel = playerStats.currentForwardPushLevel;
-		//upwardPushLevel = playerStats.currentUpwardPushLevel;
 		this.transform.localScale = new Vector3 (playerStats.playerSize.x, playerStats.playerSize.y, playerStats.playerSize.z);
 	}
 

@@ -26,7 +26,6 @@ public class UpwardPushUpgrader : MonoBehaviour {
 
 	public void UpgradeForwardPushLevel(){
 		if (playerStats.playerMoney >= requiredMoney) {
-			//player.GetComponent<ZippyTerrain2DRollingBall> ().upwardPushLevel += 1;
 			playerStats.currentUpwardPushLevel += 1;
 			playerStats.playerMoney -= requiredMoney;
 			upgradeLevel++;
