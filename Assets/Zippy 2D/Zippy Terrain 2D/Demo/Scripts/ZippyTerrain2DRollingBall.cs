@@ -13,23 +13,16 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	[Range(2.0f, 10.0f)] // bounds the inital force for testing and tweaking between these values
 	[Tooltip("Initial force applied to the rock when the game starts")]
 	public float initialForce; // the initial force applied to the rock when the game starts
-	[Tooltip("Initial force applied by all of the player's pushes, the upgrade level multiples this value")]
-	[Range(5.0f, 30.0f)]
-	public float initialPushForce; // the force applied when the player uses a wind push, can be increased with the upgrades
-	[Tooltip("Initial amount of forward pushes, this is multiplied by upwardPushLevel in order to determine the number of pushes at the current level")]
-	public int initialForwardPushes;
-	[Tooltip("Initial amount of upward pushes, this is multiplied by forwardPushLevel in order to determine the number of pushes at the current level")]
-	public int initialUpwardPushes;
 
 	[Header("Upgradeable Traits")]
 	[Tooltip("The number of forward pushes the player can use")]
 	public int forwardPushes; //number of times the player can push the rock forward
-	[Tooltip("The current upgrade level of the player's forward pushs. This is the amount the initialPushForce and initialForwardPushes is multiplied by.")]
-	public int forwardPushLevel; //current upgrade level of the player's forward Pushes;
+	//[Tooltip("The current upgrade level of the player's forward pushs. This is the amount the initialUpwardPushes is multiplied by.")]
+	//public int forwardPushLevel; //current upgrade level of the player's upward pushes;
 	[Tooltip("The number of upward pushes the player can use")]
 	public int upwardPushes; //number of times the player can push the rock upward
-	[Tooltip("The current upgrade level of the player's upward pushs. This is the amount the initialPushForce and initialUpwardPushes is multiplied by.")]
-	public int upwardPushLevel; //current upgrade level of the player's upward pushes;
+	//[Tooltip("The current upgrade level of the player's upward pushs. This is the amount the initialUpwardPushes is multiplied by.")]
+	//public int upwardPushLevel; //current upgrade level of the player's upward pushes;
 	//
 
 	Rigidbody2D cacheRB;
@@ -43,11 +36,9 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 		//initial push on the rock
 		cacheRB.AddForce(new Vector2(initialForce, 0.0f), ForceMode2D.Impulse);
 		//load all the rock stats earned in previous runs
-		forwardPushLevel = playerStats.currentForwardPushLevel;
-		upwardPushLevel = playerStats.currentUpwardPushLevel;
+		//forwardPushLevel = playerStats.currentForwardPushLevel;
+		//upwardPushLevel = playerStats.currentUpwardPushLevel;
 		this.transform.localScale = new Vector3 (playerStats.playerSize.x, playerStats.playerSize.y, playerStats.playerSize.z);
-		playerStats.currentForwardPushes = initialForwardPushes * forwardPushLevel;
-		playerStats.currentUpwardPushes = initialUpwardPushes * upwardPushLevel;
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
@@ -76,14 +67,14 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	void FixedUpdate() {
 		if (triggerForwardPush) {
 			if (playerStats.currentForwardPushes != 0) {
-				cacheRB.AddForce (new Vector2 (initialPushForce*forwardPushLevel, 0.0f), ForceMode2D.Impulse);
+				cacheRB.AddForce (new Vector2 (playerStats.currentForwardPushForce, 0.0f), ForceMode2D.Impulse);
 				playerStats.currentForwardPushes--;
 				triggerForwardPush = false;
 			}
 		}
 		if (triggerUpwardPush) {
 			if (playerStats.currentUpwardPushes != 0) {
-				cacheRB.AddForce (new Vector2 (0.0f, initialPushForce*upwardPushLevel), ForceMode2D.Impulse);
+				cacheRB.AddForce (new Vector2 (0.0f, playerStats.currentUpwardPushForce), ForceMode2D.Impulse);
 				playerStats.currentUpwardPushes--;
 				triggerUpwardPush = false;
 			}
