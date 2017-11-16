@@ -1,9 +1,23 @@
 fileFormatVersion: 2
 guid: 651879fff1b381e4ebf182914c51c523
-timeCreated: 1510797954
+timeCreated: 1510869088
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: GoblinBruiser_0
+    21300002: GoblinBruiser_1
+    21300004: GoblinBruiser_2
+    21300006: GoblinBruiser_3
+    21300008: GoblinBruiser_4
+    21300010: GoblinBruiser_5
+    21300012: GoblinBruiser_6
+    21300014: GoblinBruiser_7
+    21300016: GoblinBruiser_8
+    21300018: GoblinBruiser_9
+    21300020: GoblinBruiser_10
+    21300022: GoblinBruiser_11
+    21300024: GoblinBruiser_12
+    21300026: GoblinBruiser_13
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +48,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +72,199 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GoblinBruiser_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 256
+        width: 43
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 181
+        width: 37
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 180
+        width: 39
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 180
+        width: 37
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_4
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 179
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_5
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 107
+        width: 47
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_6
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 107
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 106
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_8
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 104
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_9
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 33
+        width: 37
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 31
+        width: 39
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_11
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 30
+        width: 34
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_12
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 29
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GoblinBruiser_13
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 28
+        width: 47
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

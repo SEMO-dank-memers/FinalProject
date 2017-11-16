@@ -29,19 +29,25 @@ public class StateMachine : MonoBehaviour{
         public State currentState { get; set; }
         public Role role { get; set; }
         public float isBrave, isAfraid; //used with fuzzy logic to help determine the State, for variation purposes
-        public Enemy() { }
+        public Enemy()
+        {
+            currentState = State.IDLE;
+            role = Role.UNASSIGNED;
+            isBrave = 0.5f;
+            isAfraid = Fuzzy.NOT(isBrave);
+        }
         //pass by value constructor
         public Enemy(State state, Role role, float b)
         {
-            this.currentState = state;
+            currentState = state;
             this.role = role;
-            this.isBrave = b;
-            this.isAfraid = Fuzzy.NOT(isBrave);
+            isBrave = b;
+            isAfraid = Fuzzy.NOT(isBrave);
         }
         public void SetBravery(Role role)
         {
             //threshold values are set according the Role
-            float randomNum = Random.Range(0.0f, 10.0f); //using values of 0 - 10 to keep simple-ish
+            float randomNum = Random.Range(0.0f, 10.0f); //using values of 0 - 9.999999 to keep simple-ish
             float lowerThreshold = 4.0f, upperThreshold = 7.0f;
             switch (role)
             {
@@ -66,9 +72,9 @@ public class StateMachine : MonoBehaviour{
             }
             //call upon chosen fuzzy function using the above floats
             this.isBrave = Fuzzy.Linear(randomNum, lowerThreshold, upperThreshold);
-            this.isAfraid = Fuzzy.NOT(isBrave); //same as NOT(isBrave)
+            this.isAfraid = Fuzzy.NOT(isBrave);
         }
-        Enemy GenerateEnemy()
+        Enemy GenerateEnemy() //also Sets Role
         {
             Enemy enemy = new Enemy();
             float rand = Random.Range(0.0f, 10.0f);
@@ -79,12 +85,28 @@ public class StateMachine : MonoBehaviour{
             enemy.SetBravery(enemy.role);
             return enemy;
         }
-	void Idle()
+        Sprite GenerateSprite(Role role)
         {
-            //just stands still and detects if a rock is nearby
-            //if the rock is very far away, as in this enemy is now far off screen...
-            //we should call a destructor to get rid of this ai so we're not taking up excess resources
-            //Destroy(this);
+            Sprite sprite = new Sprite();
+            if (role == Role.UNASSIGNED) sprite = Resources.Load<Sprite>("Sprites/Goblins_0");
+            else if (role == Role.THROWER) sprite = Resources.Load<Sprite>("Sprites/GoblinChucker_0");
+            else if (role == Role.TROLL) sprite = Resources.Load<Sprite>("Sprites/GoblinTroll_0");
+            else if (role == Role.NINJA) sprite = Resources.Load<Sprite>("Sprites/GoblinNinja_0");
+            else if (role == Role.BRAWLER) sprite = Resources.Load<Sprite>("Sprites/GoblinBruiser_0");
+            else if (role == Role.BIRD) sprite = Resources.Load<Sprite>("Sprites/Bird_0");
+            return sprite;
+        }
+        void SetState()
+        {
+            //first get role
+        }
+	    void Idle()
+        {
+            /* just stands still and detects if a rock is nearby
+             * if the rock is very far away, as in this enemy is now far off screen...
+             * we should call a destructor to get rid of this ai so we're not taking up excess resources
+             * Destroy(this);
+             */
         }
         void Attack()
         {
@@ -94,6 +116,7 @@ public class StateMachine : MonoBehaviour{
         void Punch()
         {
             //uses a punching animation, and reduces momentum more significantly than a throw if it hits.
+
         }
         void Run()
         {
@@ -127,9 +150,13 @@ public class StateMachine : MonoBehaviour{
         {
             //bird charges towards the rock
         }
-        float GetDistance(float rockX, float rockY, float aiX, float aiY)
+        float GetDistance(object sender, GameObject Rock)
         {
-            return Mathf.Sqrt(((rockX - aiX)*(rockX - aiX)) + ((rockY - aiY)*(rockY-aiY)));
+            float x1 = ((GameObject)sender).transform.position.x;
+            float y1 = ((GameObject)sender).transform.position.y;
+            float x2 = Rock.transform.position.x;
+            float y2 = Rock.transform.position.y;
+            return Mathf.Sqrt(((x1 - x2)*(x1 - x2)) + ((y1 - y2)*(y1 - y2)));
         }
     }
 }
