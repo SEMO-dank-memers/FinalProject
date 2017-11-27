@@ -15,11 +15,16 @@ public class EnemyBehaviour : MonoBehaviour {
         foolToBeCrushed.SetBravery(role);
     }
 
-    // Update is called once per frame
-    void Update () {
-	    //run change state logic
+    // Update is called once per frame, LateUpdate performs calculations before running the commands
+    void LateUpdate () {
+	//run change state logic
         //set behaviour according to the set state
-	}
+	/*
+	this.transform.LookAt(goal.position);
+	Vector3 direction = goal.position - this.transform.position;
+	if(direction.magnitude > accuracy) this.transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+	*/
+    }
 
     void Idle()
     {
