@@ -1,9 +1,34 @@
 fileFormatVersion: 2
 guid: e68c27b1ed9ff2048ac4d83aae25fffb
-timeCreated: 1510160430
+timeCreated: 1512013781
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Coins_Logo_0
+    21300002: Coins_Logo_1
+    21300004: Coins_Logo_2
+    21300006: Coins_Logo_3
+    21300008: Coins_Logo_4
+    21300010: Coins_Logo_5
+    21300012: Coins_Logo_6
+    21300014: Coins_Logo_7
+    21300016: Coins_Logo_8
+    21300018: Coins_Logo_9
+    21300020: Coins_Logo_10
+    21300022: Coins_Logo_11
+    21300024: Coins_Logo_12
+    21300026: Coins_Logo_13
+    21300028: Coins_Logo_14
+    21300030: Coins_Logo_15
+    21300032: Coins_Logo_16
+    21300034: Coins_Logo_17
+    21300036: Coins_Logo_18
+    21300038: Coins_Logo_19
+    21300040: Coins_Logo_20
+    21300042: Coins_Logo_21
+    21300044: Coins_Logo_22
+    21300046: Coins_Logo_23
+    21300048: Coins_Logo_24
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +59,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,10 +83,556 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
+    sprites:
+    - serializedVersion: 2
+      name: Coins_Logo_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 90
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 90
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 90
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_3
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 90
+        width: 5
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_4
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 53
+        width: 14
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_5
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 90
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_6
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 90
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 51
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_8
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 51
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_9
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 51
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_10
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 51
+        width: 5
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_11
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 51
+        width: 5
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_12
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 51
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_13
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 51
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_14
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 51
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_15
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 51
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_16
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 51
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_17
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 51
+        width: 5
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_18
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 51
+        width: 12
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_19
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 51
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 52
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_21
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 11
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_22
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 12
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_23
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 12
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Coins_Logo_24
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 10
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -87, y: -23.5}
+      - {x: -100, y: -31.5}
+      - {x: -101, y: -36.5}
+      - {x: -101, y: -53.5}
+      - {x: -100, y: -54.5}
+      - {x: -84, y: -54.5}
+      - {x: -78, y: -41.5}
+      - {x: -78, y: -23.5}
+    - - {x: -173, y: -22.5}
+      - {x: -174, y: -26.5}
+      - {x: -173, y: -29.5}
+      - {x: -174, y: -36.5}
+      - {x: -174, y: -46.5}
+      - {x: -172, y: -53.5}
+      - {x: -154, y: -53.5}
+      - {x: -146, y: -52.5}
+      - {x: -143, y: -39.5}
+      - {x: -143, y: -22.5}
+    - - {x: -129, y: -31.5}
+      - {x: -145, y: -42.5}
+      - {x: -145, y: -52.5}
+      - {x: -103, y: -52.5}
+      - {x: -99, y: -42.5}
+      - {x: -99, y: -31.5}
+    - - {x: -174, y: 24.5}
+      - {x: -176, y: 18.5}
+      - {x: -176, y: -5.5}
+      - {x: -168, y: -13.5}
+      - {x: -152, y: -13.5}
+      - {x: -141, y: -9.5}
+      - {x: -141, y: 16.5}
+      - {x: -150, y: 24.5}
+    - - {x: -134, y: 24.5}
+      - {x: -139, y: 23.5}
+      - {x: -139, y: -10.5}
+      - {x: -135, y: -13.5}
+      - {x: -114, y: -13.5}
+      - {x: -111, y: -12.5}
+      - {x: -111, y: 22.5}
+      - {x: -114, y: 24.5}
+    - - {x: -103, y: 24.5}
+      - {x: -109, y: 16.5}
+      - {x: -109, y: -5.5}
+      - {x: -104, y: -13.5}
+      - {x: -94, y: -13.5}
+      - {x: -89, y: -11.5}
+      - {x: -89, y: 18.5}
+      - {x: -96, y: 24.5}
+    - - {x: -80, y: -13.5}
+      - {x: -77, y: -11.5}
+      - {x: -77, y: 24.5}
+      - {x: -86, y: 24.5}
+      - {x: -86, y: -13.5}
+    - - {x: -63, y: 24.5}
+      - {x: -63, y: -7.5}
+      - {x: -62, y: -13.5}
+      - {x: -56, y: -13.5}
+      - {x: -56, y: -12.5}
+      - {x: -54, y: -7.5}
+      - {x: -54, y: 21.5}
+      - {x: -58, y: 24.5}
+    - - {x: -34, y: 24.5}
+      - {x: -47, y: 24.5}
+      - {x: -52, y: 17.5}
+      - {x: -52, y: -5.5}
+      - {x: -45, y: -13.5}
+      - {x: -40, y: -13.5}
+      - {x: -34, y: -9.5}
+      - {x: -32, y: -7.5}
+      - {x: -32, y: 17.5}
+    - - {x: -22, y: 24.5}
+      - {x: -27, y: 18.5}
+      - {x: -30, y: 14.5}
+      - {x: -30, y: -11.5}
+      - {x: -25, y: -13.5}
+      - {x: -4, y: -13.5}
+      - {x: -2, y: -9.5}
+      - {x: -2, y: 13.5}
+      - {x: -6, y: 24.5}
+    - - {x: 26, y: 24.5}
+      - {x: 9, y: 24.5}
+      - {x: -2, y: 20.5}
+      - {x: -2, y: -5.5}
+      - {x: 7, y: -13.5}
+      - {x: 25, y: -13.5}
+      - {x: 34, y: -4.5}
+      - {x: 34, y: 11.5}
+      - {x: 33, y: 18.5}
+    - - {x: 43, y: 24.5}
+      - {x: 36, y: 15.5}
+      - {x: 36, y: -2.5}
+      - {x: 37, y: -6.5}
+      - {x: 46, y: -13.5}
+      - {x: 57, y: -13.5}
+      - {x: 64, y: -3.5}
+      - {x: 64, y: 15.5}
+      - {x: 57, y: 24.5}
+    - - {x: 79, y: 24.5}
+      - {x: 69, y: 24.5}
+      - {x: 66, y: 22.5}
+      - {x: 66, y: -8.5}
+      - {x: 72, y: -13.5}
+      - {x: 81, y: -13.5}
+      - {x: 86, y: -5.5}
+      - {x: 86, y: 16.5}
+      - {x: 85, y: 21.5}
+    - - {x: 93, y: 24.5}
+      - {x: 90, y: 23.5}
+      - {x: 88, y: 22.5}
+      - {x: 88, y: -8.5}
+      - {x: 89, y: -13.5}
+      - {x: 95, y: -13.5}
+      - {x: 95, y: -12.5}
+      - {x: 97, y: -8.5}
+      - {x: 97, y: 14.5}
+      - {x: 96, y: 21.5}
+    - - {x: 108, y: 24.5}
+      - {x: 108, y: -11.5}
+      - {x: 110, y: -13.5}
+      - {x: 117, y: -13.5}
+      - {x: 117, y: 21.5}
+      - {x: 115, y: 24.5}
+    - - {x: 133, y: 24.5}
+      - {x: 124, y: 24.5}
+      - {x: 120, y: 18.5}
+      - {x: 120, y: -11.5}
+      - {x: 125, y: -13.5}
+      - {x: 135, y: -13.5}
+      - {x: 140, y: -4.5}
+      - {x: 140, y: 15.5}
+      - {x: 139, y: 21.5}
+    - - {x: 148, y: 25.5}
+      - {x: 142, y: 21.5}
+      - {x: 142, y: -4.5}
+      - {x: 147, y: -12.5}
+      - {x: 163, y: -12.5}
+      - {x: 170, y: -6.5}
+      - {x: 170, y: 16.5}
+      - {x: 166, y: 25.5}
+    - - {x: -72, y: -9.5}
+      - {x: -70, y: -11.5}
+      - {x: -67, y: -10.5}
+      - {x: -67, y: 20.5}
+      - {x: -69, y: 22.5}
+      - {x: -72, y: 21.5}
+    - - {x: 101, y: -9.5}
+      - {x: 103, y: -11.5}
+      - {x: 106, y: -10.5}
+      - {x: 106, y: 20.5}
+      - {x: 104, y: 22.5}
+      - {x: 101, y: 21.5}
+    - - {x: -170, y: 62.5}
+      - {x: -176, y: 57.5}
+      - {x: -176, y: 33.5}
+      - {x: -168, y: 25.5}
+      - {x: -148, y: 25.5}
+      - {x: -141, y: 33.5}
+      - {x: -141, y: 60.5}
+      - {x: -147, y: 62.5}
+    - - {x: -134, y: 62.5}
+      - {x: -138, y: 58.5}
+      - {x: -139, y: 55.5}
+      - {x: -139, y: 34.5}
+      - {x: -131, y: 25.5}
+      - {x: -119, y: 25.5}
+      - {x: -111, y: 33.5}
+      - {x: -111, y: 60.5}
+      - {x: -117, y: 62.5}
+    - - {x: -105, y: 62.5}
+      - {x: -109, y: 60.5}
+      - {x: -109, y: 31.5}
+      - {x: -107, y: 25.5}
+      - {x: -94, y: 25.5}
+      - {x: -89, y: 33.5}
+      - {x: -89, y: 55.5}
+      - {x: -95, y: 62.5}
+    - - {x: -80, y: 25.5}
+      - {x: -77, y: 27.5}
+      - {x: -77, y: 62.5}
+      - {x: -86, y: 62.5}
+      - {x: -86, y: 25.5}
+    - - {x: -63, y: 62.5}
+      - {x: -63, y: 31.5}
+      - {x: -62, y: 25.5}
+      - {x: -56, y: 25.5}
+      - {x: -56, y: 26.5}
+      - {x: -54, y: 31.5}
+      - {x: -54, y: 60.5}
+      - {x: -56, y: 62.5}
+    - - {x: -45, y: 62.5}
+      - {x: -51, y: 55.5}
+      - {x: -51, y: 33.5}
+      - {x: -46, y: 25.5}
+      - {x: -39, y: 25.5}
+      - {x: -32, y: 28.5}
+      - {x: -31, y: 29.5}
+      - {x: -31, y: 55.5}
+      - {x: -34, y: 62.5}
+    - - {x: -22, y: 62.5}
+      - {x: -26, y: 57.5}
+      - {x: -29, y: 53.5}
+      - {x: -29, y: 27.5}
+      - {x: -24, y: 25.5}
+      - {x: -3, y: 25.5}
+      - {x: -1, y: 29.5}
+      - {x: -1, y: 52.5}
+      - {x: -4, y: 62.5}
+    - - {x: -72, y: 29.5}
+      - {x: -70, y: 27.5}
+      - {x: -67, y: 28.5}
+      - {x: -67, y: 59.5}
+      - {x: -69, y: 61.5}
+      - {x: -72, y: 60.5}
   spritePackingTag: 
   userData: 
   assetBundleName: 
