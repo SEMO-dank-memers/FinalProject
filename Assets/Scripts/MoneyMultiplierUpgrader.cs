@@ -24,7 +24,7 @@ public class MoneyMultiplierUpgrader : MonoBehaviour {
 	}
 
 	public void UpgradeMoneyMultiplier() {
-		if (playerStats.playerMoney >= requiredMoney) {
+		if ((playerStats.playerMoney >= requiredMoney) && (upgradeLevel != 5)) {
 			playerStats.playerMoney -= requiredMoney;
 			upgradeLevel++;
 			Lights[upgradeLevel-1].color = c;

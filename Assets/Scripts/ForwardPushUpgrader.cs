@@ -25,7 +25,7 @@ public class ForwardPushUpgrader : MonoBehaviour {
 	}
 
 	public void UpgradeForwardPushLevel(){
-		if (playerStats.playerMoney >= requiredMoney) {
+		if ((playerStats.playerMoney >= requiredMoney) && (upgradeLevel != 5)) {
 			playerStats.currentForwardPushLevel += 1;
 			playerStats.playerMoney -= requiredMoney;
 			upgradeLevel++;

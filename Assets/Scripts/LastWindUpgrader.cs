@@ -24,7 +24,7 @@ public class LastWindUpgrader : MonoBehaviour {
 	}
 
 	public void UpgradeLastWindLevel(){
-		if (playerStats.playerMoney >= requiredMoney) {
+		if ((playerStats.playerMoney >= requiredMoney) && (upgradeLevel != 5)) {
 			playerStats.playerMoney -= requiredMoney;
 			playerStats.lives += 1;
 			upgradeLevel++;

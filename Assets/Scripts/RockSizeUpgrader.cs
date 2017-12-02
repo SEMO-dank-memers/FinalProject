@@ -24,7 +24,7 @@ public class RockSizeUpgrader : MonoBehaviour {
 	}
 
 	public void UpgradeRockSize(){
-		if (playerStats.playerMoney >= requiredMoney) {
+		if ((playerStats.playerMoney >= requiredMoney) && (upgradeLevel != 5)) {
 			playerStats.playerSize = new Vector3(playerStats.playerSize.x+0.45f, playerStats.playerSize.y+0.45f, playerStats.playerSize.z);
 			playerStats.playerMoney -= requiredMoney;
 			upgradeLevel++;
