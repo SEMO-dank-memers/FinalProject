@@ -35,7 +35,7 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 		if (coll.gameObject.tag == "Coin") {
 			coll.gameObject.SetActive (false);
 		}
-		playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier);
+		playerStats.playerMoney = playerStats.playerMoney + (5000 * playerStats.moneyMultiplier);
 	}
 
 	IEnumerator CountDown (){ //this triggers the end of the game

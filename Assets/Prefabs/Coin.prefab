@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4897886102928318}
   - component: {fileID: 212484645639442946}
   - component: {fileID: 114663131214710786}
-  - component: {fileID: 58392530480509300}
+  - component: {fileID: 58884791029873510}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -35,14 +35,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1607276789255102}
-  m_LocalRotation: {x: -0, y: -0, z: -0.035307772, w: 0.9993765}
-  m_LocalPosition: {x: 14.48, y: 17.748262, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.007929773, w: 0.9999686}
+  m_LocalPosition: {x: 29.87, y: 12.532519, z: 0}
   m_LocalScale: {x: 1, y: 0.9, z: 0.22715}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58392530480509300
+--- !u!58 &58884791029873510
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -54,9 +54,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0028874038, y: -0.00022659115}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.15550177
+  m_Radius: 0.5
 --- !u!114 &114663131214710786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2de9b88b10ceaf418d4a6c72997410f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastPos: {x: 14.48, y: 17.748262, z: 0}
+  lastPos: {x: 29.87, y: 12.532519, z: 0}
   positionOffset: 0.3
 --- !u!212 &212484645639442946
 SpriteRenderer:

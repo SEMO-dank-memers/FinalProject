@@ -11,19 +11,24 @@ public class UpwardForceUpgrader : MonoBehaviour {
 	[Tooltip("Place the upgrade lights in order into these sockets")]
 	public Image[] Lights = new Image[5];
 	private Color c = Color.blue;
+	private Color y = Color.yellow;
 	private static int requiredMoney = 80; 
 	public Text thisButton;
 
 	void Start(){
-
-		int temp = upgradeLevel;
-		while (temp > 0) {
-			Lights [temp - 1].color = c;
-			temp--;
-		}
 		if (upgradeLevel != 5) {
+			int temp = upgradeLevel;
+			while (temp > 0) {
+				Lights [temp - 1].color = c;
+				temp--;
+			}
 			thisButton.text = "Upward Force: " + requiredMoney;
 		} else {
+			int temp = upgradeLevel;
+			while (temp > 0) {
+				Lights [temp - 1].color = y;
+				temp--;
+			}
 			thisButton.text = "Upward Force";
 		}
 	}
@@ -35,8 +40,16 @@ public class UpwardForceUpgrader : MonoBehaviour {
 			upgradeLevel++;
 			Lights[upgradeLevel-1].color = c;
 			requiredMoney = requiredMoney * 2;
-			thisButton.text = "Upward Force: " + requiredMoney;
-
+			if (upgradeLevel != 5) {
+				thisButton.text = "Upward Force: " + requiredMoney;
+			} else {
+				int temp = upgradeLevel;
+				while (temp > 0) {
+					Lights [temp - 1].color = y;
+					temp--;
+				}
+				thisButton.text = "Upward Force";
+			}
 		}
 	}
 }
