@@ -12,6 +12,7 @@ public static class playerStats{
 	public static float currentForwardPushForce = 5.0f;
 	public static float currentUpwardPushForce = 5.0f;
 	public static int playerMoney = 0;
+	public static int moneyMultiplier = 1;
 	public static Vector3 playerSize = new Vector3(0.83f, 0.83f, 1.0f);
 };
 
