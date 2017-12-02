@@ -21,7 +21,11 @@ public class UpwardPushUpgrader : MonoBehaviour {
 			Lights [temp - 1].color = c;
 			temp--;
 		}
-		thisButton.text = "Upward Pushs: " + requiredMoney;
+		if (upgradeLevel != 5) {
+			thisButton.text = "Upward Pushs: " + requiredMoney;
+		} else {
+			thisButton.text = "Upward Pushs";
+		}
 	}
 
 	public void UpgradeForwardPushLevel(){
@@ -32,7 +36,6 @@ public class UpwardPushUpgrader : MonoBehaviour {
 			Lights[upgradeLevel-1].color = c;
 			requiredMoney = requiredMoney * 2;
 			thisButton.text = "Upward Pushs: " + requiredMoney;
-
 		}
 	}
 }

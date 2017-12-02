@@ -21,10 +21,14 @@ public class UpwardForceUpgrader : MonoBehaviour {
 			Lights [temp - 1].color = c;
 			temp--;
 		}
-		thisButton.text = "Upward Force: " + requiredMoney;
+		if (upgradeLevel != 5) {
+			thisButton.text = "Upward Force: " + requiredMoney;
+		} else {
+			thisButton.text = "Upward Force";
+		}
 	}
 
-	public void UpgradeForwardPushLevel(){
+	public void UpgradeUpwardPushForce(){
 		if ((playerStats.playerMoney >= requiredMoney) && (upgradeLevel != 5)) {
 			playerStats.currentUpwardPushForce *= 1.5f;
 			playerStats.playerMoney -= requiredMoney;

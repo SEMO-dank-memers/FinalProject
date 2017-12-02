@@ -21,7 +21,11 @@ public class ForwardForceUpgrader : MonoBehaviour {
 			Lights [temp - 1].color = c;
 			temp--;
 		}
-		thisButton.text = "Forward Force: " + requiredMoney;
+		if (upgradeLevel != 5) {
+			thisButton.text = "Forward Force: " + requiredMoney;
+		} else {
+			thisButton.text = "Forward Force";	
+		}
 	}
 
 	public void UpgradeForwardPushLevel(){

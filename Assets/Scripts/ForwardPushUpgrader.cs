@@ -21,9 +21,12 @@ public class ForwardPushUpgrader : MonoBehaviour {
 			Lights [temp - 1].color = c;
 			temp--;
 		}
-		thisButton.text = "Forward Pushs: " + requiredMoney;
+		if (upgradeLevel != 5) {
+			thisButton.text = "Forward Pushs: " + requiredMoney;
+		} else {
+			thisButton.text = "Forward Pushs";		
+		}
 	}
-
 	public void UpgradeForwardPushLevel(){
 		if ((playerStats.playerMoney >= requiredMoney) && (upgradeLevel != 5)) {
 			playerStats.currentForwardPushLevel += 1;

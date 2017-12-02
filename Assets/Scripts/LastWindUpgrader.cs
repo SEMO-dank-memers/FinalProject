@@ -20,7 +20,11 @@ public class LastWindUpgrader : MonoBehaviour {
 			Lights [temp - 1].color = c;
 			temp--;
 		}
-		thisButton.text = "Last Wind: " + requiredMoney;
+		if (upgradeLevel != 5) {
+			thisButton.text = "Last Wind: " + requiredMoney;
+		} else {
+			thisButton.text = "Last Wind";
+		}
 	}
 
 	public void UpgradeLastWindLevel(){

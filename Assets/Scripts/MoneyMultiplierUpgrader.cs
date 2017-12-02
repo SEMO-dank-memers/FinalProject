@@ -20,7 +20,11 @@ public class MoneyMultiplierUpgrader : MonoBehaviour {
 			Lights[temp - 1].color = c;
 			temp--;
 		}
-		thisButton.text = "Money Multiplier: " + requiredMoney;
+		if (upgradeLevel != 5) {
+			thisButton.text = "Money Multiplier: " + requiredMoney;
+		} else{
+			thisButton.text = "Money Multiplier";		
+		}
 	}
 
 	public void UpgradeMoneyMultiplier() {

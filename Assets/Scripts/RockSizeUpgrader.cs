@@ -20,7 +20,11 @@ public class RockSizeUpgrader : MonoBehaviour {
 			Lights [temp - 1].color = c;
 			temp--;
 		}
-		thisButton.text = "Rock Size: " + requiredMoney;
+		if (upgradeLevel != 5) {
+			thisButton.text = "Rock Size: " + requiredMoney;
+		} else {
+			thisButton.text = "Rock Size";
+		}
 	}
 
 	public void UpgradeRockSize(){
