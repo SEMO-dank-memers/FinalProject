@@ -735,7 +735,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Aron
+  m_Text: Aaron
 --- !u!222 &968477097
 CanvasRenderer:
   m_ObjectHideFlags: 0
