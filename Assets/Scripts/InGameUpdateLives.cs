@@ -8,6 +8,6 @@ public class InGameUpdateLives : MonoBehaviour {
 		this.GetComponent<Text> ().text = " Lifes: " + (playerStats.lives - 1);
 	}
 	void Update () {
-		this.GetComponent<Text> ().text = " Lifes: " + playerStats.currentPlayerLives;
+		this.GetComponent<Text> ().text = " Lifes: " + (playerStats.currentPlayerLives - 1);
 	}
 }
