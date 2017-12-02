@@ -14,6 +14,7 @@ public static class playerStats{
 	public static int playerMoney = 0;
 	public static int moneyMultiplier = 1;
 	public static int lives = 1;
+	public static int currentPlayerLives;
 	public static Vector3 playerSize = new Vector3(0.83f, 0.83f, 1.0f);
 };
 
@@ -23,6 +24,7 @@ public class RestartGame : MonoBehaviour {
 
 	private static GameObject objectInstance;
 	void Awake(){
+		playerStats.currentPlayerLives = playerStats.lives;
 		playerStats.currentForwardPushes = 3; //initial forward pushes
 		playerStats.currentUpwardPushes = 3; //initial upward pushes
 		playerStats.currentForwardPushes *= playerStats.currentForwardPushLevel;

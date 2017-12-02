@@ -35,7 +35,7 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 		if (coll.gameObject.tag == "Coin") {
 			coll.gameObject.SetActive (false);
 		}
-		playerStats.playerMoney = playerStats.playerMoney + (5000 * playerStats.moneyMultiplier);
+		playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier);
 	}
 
 	IEnumerator CountDown (){ //this triggers the end of the game
@@ -78,6 +78,7 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 				StartCoroutine ("CountDown");
 			} else if ((cacheRB.velocity.x == 0) || (cacheRB.velocity.x < Vector2.zero.x)) {
 				lives--;
+				playerStats.currentPlayerLives--;
 				cacheRB.AddForce (new Vector2 (30.0f, 0.0f), ForceMode2D.Impulse);
 			}
 		}
