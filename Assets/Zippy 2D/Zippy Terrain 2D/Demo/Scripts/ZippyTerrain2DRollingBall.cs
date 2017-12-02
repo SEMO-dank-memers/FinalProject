@@ -20,9 +20,9 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	bool gameOver = false;
 	bool triggerUpwardPush = false;
 	bool triggerForwardPush = false;
-    public float timeBetweenShots = 1f;  // Allow 1 push/jump per second
+    public float timeBetweenShots = 0.01f;  // Allow 1 push/jump per second
 	private int lives = playerStats.lives;
-    private float timestamp;
+    //private float timestamp;
 
     void Start () {
 		cacheRB = GetComponent<Rigidbody2D>();
@@ -46,13 +46,15 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	}
 
 	void Update(){
-		if(Time.time >= timestamp && (Input.GetKeyDown("d"))){
+		//if(Time.time >= timestamp && (Input.GetKeyDown("d"))){
+		if(Input.GetKeyDown("d")){
 			triggerForwardPush = true; //Input.GetKeyDown relies on Update() so we pool the result for use when physics calcs are done in FixedUpdate, this prevents input loss
-            timestamp = Time.time + timeBetweenShots;
+            //timestamp = Time.time + timeBetweenShots;
         }
-		if(Time.time >= timestamp && (Input.GetKeyDown("w"))){
+		//if(Time.time >= timestamp && (Input.GetKeyDown("w"))){
+		if(Input.GetKeyDown("w")){
 			triggerUpwardPush = true;
-            timestamp = Time.time + timeBetweenShots;
+            //timestamp = Time.time + timeBetweenShots;
         }
 	}
 
