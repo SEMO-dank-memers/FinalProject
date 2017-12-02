@@ -21,7 +21,7 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	bool triggerUpwardPush = false;
 	bool triggerForwardPush = false;
     public float timeBetweenShots = 1f;  // Allow 1 push/jump per second
-
+	private int lives = playerStats.lives;
     private float timestamp;
 
     void Start () {
@@ -72,8 +72,11 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 			}
 		}
 		if ((playerStats.currentUpwardPushes == 0) && (playerStats.currentForwardPushes == 0) && (!gameOver)) { //if we are out of ways to speed up the rock and its going backwards then the game is over
-			if((cacheRB.velocity.x == 0) || (cacheRB.velocity.x < Vector2.zero.x)){
+			if (((cacheRB.velocity.x == 0) || (cacheRB.velocity.x < Vector2.zero.x)) && lives == 1) {
 				StartCoroutine ("CountDown");
+			} else if ((cacheRB.velocity.x == 0) || (cacheRB.velocity.x < Vector2.zero.x)) {
+				lives--;
+				cacheRB.AddForce (new Vector2 (30.0f, 0.0f), ForceMode2D.Impulse);
 			}
 		}
 	}
