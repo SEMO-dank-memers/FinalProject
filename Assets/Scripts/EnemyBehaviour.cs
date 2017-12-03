@@ -10,8 +10,8 @@ public class EnemyBehaviour : MonoBehaviour {
 	public Transform goblin;
 	private StateMachine.Enemy logic;
 	public string role;
-	private float speed = 1.0f;
-	private float jumpHeight = 10.0f;
+	private float speed = 5.0f;
+	private float jumpHeight = 2.0f;
 	//StateMachine.Enemy foolToBeWrecked = new StateMachine.Enemy();
 	//StateMachine.Enemy.Role role;
 
@@ -106,7 +106,8 @@ public class EnemyBehaviour : MonoBehaviour {
          */
 
 		if (rock.transform.position.x > (this.transform.position.x + 200.0f)) //if rock is 200 units to the right of this gameobject
-			Destroy(this); //commit harakiri
+			print("I would have destroyed myself"); 
+			//Destroy(this); //commit harakiri
 		else if (logic.role == StateMachine.Enemy.Role.NINJA) {
 			if (rock.transform.position.x < this.transform.position.x) {
 				if (logic.isBrave >= logic.isAfraid) {
