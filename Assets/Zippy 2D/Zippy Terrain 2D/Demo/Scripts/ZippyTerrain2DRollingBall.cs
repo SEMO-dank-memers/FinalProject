@@ -23,6 +23,8 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
     public float timeBetweenShots = 0.01f;  // Allow 1 push/jump per second
 	private int lives = playerStats.lives;
     //private float timestamp;
+    public AudioClip Explosion;
+    private AudioSource source;
 
     void Start () {
 		cacheRB = GetComponent<Rigidbody2D>();
@@ -31,7 +33,21 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 		this.transform.localScale = new Vector3 (playerStats.playerSize.x, playerStats.playerSize.y, playerStats.playerSize.z);
 	}
 
-	void OnTriggerEnter2D(Collider2D coll){
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.gameObject.tag == "Enemy")
+        {
+            source.PlayOneShot(Explosion);
+        }
+    }
+
+
+    void OnTriggerEnter2D(Collider2D coll){
 		if (coll.gameObject.tag == "Coin") {
 			coll.gameObject.SetActive (false);
 		}
