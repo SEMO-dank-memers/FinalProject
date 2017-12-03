@@ -5,8 +5,8 @@ using UnityEngine;
 public class BirdBehaviour : MonoBehaviour {
 	
 	GameObject rock;
-	StateMachine.Role role = StateMachine.Role.BIRD;
-	StateMachine.State state = StateMachine.State.FLY;
+	StateMachine.Enemy.Role role = StateMachine.Enemy.Role.BIRD;
+	StateMachine.Enemy.State state = StateMachine.Enemy.State.FLY;
 	
 	// Use this for initialization
 	void Start(){
@@ -18,11 +18,11 @@ public class BirdBehaviour : MonoBehaviour {
 	void LateUpdate(){
 		//run change state logic
 		//set behaviour according to the state
-		if(state == StateMachine.State.FLY)
+		if(state == StateMachine.Enemy.State.FLY)
 		{
 			
 		}
-		else if(state == StateMachine.State.CHARGE)
+		else if(state == StateMachine.Enemy.State.CHARGE)
 		{
 			
 		}
