@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine {
+public static class StateMachine {
     /* States:
 	 * Idle is just standing and doing nothing; used for initializing
 	 * Throw takes place when a Thrower is brave; a rock is thrown
@@ -22,21 +22,23 @@ public class StateMachine {
 	 * Ninja is the goblin in black that will run, jump, or crouch
 	 * Bird is bird, it flies and a whole flock gets mad if you hit their friend
 	 */
-    public class Enemy
+	public class Enemy
     {
         public enum State { IDLE, THROW, ATTACK, RUN, CROUCH, JUMP, PANIC, FLY, CHARGE };
         public enum Role { UNASSIGNED, BRAWLER, THROWER, TROLL, NINJA, BIRD };
         public State currentState { get; set; }
         public Role role { get; set; }
         public float isBrave, isAfraid; //used with fuzzy logic to help determine the State, for variation purposes
-        public Enemy()
+        
+		public Enemy()
         {
             currentState = State.IDLE;
             role = Role.UNASSIGNED;
             isBrave = 0.5f;
             isAfraid = Fuzzy.NOT(isBrave);
         }
-        //pass by value constructor
+        
+		//pass by value constructor
         public Enemy(State state, Role role, float b)
         {
             currentState = state;
@@ -44,7 +46,8 @@ public class StateMachine {
             isBrave = b;
             isAfraid = Fuzzy.NOT(isBrave);
         }
-        public void SetBravery(Role role)
+        
+		public void SetBravery(Role role)
         {
             //threshold values are set according the Role
             float randomNum = Random.Range(0.0f, 10.0f); //using values of 0 - 9.999999 to keep simple-ish
@@ -74,35 +77,18 @@ public class StateMachine {
             this.isBrave = Fuzzy.Linear(randomNum, lowerThreshold, upperThreshold);
             this.isAfraid = Fuzzy.NOT(isBrave);
         }
-        public Enemy GenerateEnemy() //also Sets Role
+        
+		public void GenerateEnemy() //also Sets Role
         {
-            Enemy enemy = new Enemy();
             float rand = Random.Range(0.0f, 10.0f);
+			/*
             if (rand < 5.0f && rand >= 2.5f) enemy.role = Enemy.Role.THROWER;
             else if (rand < 7.5f && rand >= 5.0f) enemy.role = Enemy.Role.BRAWLER;
             else if (rand < 10.0f && rand >= 7.5f) enemy.role = Enemy.Role.NINJA;
             else enemy.role = Enemy.Role.TROLL;
-            enemy.SetBravery(enemy.role);
-            return enemy;
-        }
-        public Sprite GenerateSprite(Enemy.Role role)
-        {
-            Sprite sprite = new Sprite();
-            if (role == Enemy.Role.UNASSIGNED) sprite = Resources.Load<Sprite>("Sprites/Goblins_0");
-            else if (role == Enemy.Role.THROWER) sprite = Resources.Load<Sprite>("Sprites/GoblinChucker_0");
-            else if (role == Enemy.Role.TROLL) sprite = Resources.Load<Sprite>("Sprites/GoblinTroll_0");
-            else if (role == Enemy.Role.NINJA) sprite = Resources.Load<Sprite>("Sprites/GoblinNinja_0");
-            else if (role == Enemy.Role.BRAWLER) sprite = Resources.Load<Sprite>("Sprites/GoblinBruiser_0");
-            else if (role == Enemy.Role.BIRD) sprite = Resources.Load<Sprite>("Sprites/Bird_0");
-            return sprite;
-        }
-        public float GetDistance(object sender, GameObject Rock)
-        {
-            float x1 = ((GameObject)sender).transform.position.x;
-            float y1 = ((GameObject)sender).transform.position.y;
-            float x2 = Rock.transform.position.x;
-            float y2 = Rock.transform.position.y;
-            return Mathf.Sqrt(((x1 - x2) * (x1 - x2)) + ((y1 - y2) * (y1 - y2)));
+            */
+			this.role = Enemy.Role.NINJA;
+            this.SetBravery(this.role);
         }
     }
 }
