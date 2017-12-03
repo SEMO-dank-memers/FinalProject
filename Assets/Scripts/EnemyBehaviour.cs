@@ -10,6 +10,8 @@ public class EnemyBehaviour : MonoBehaviour {
 	public Transform goblin;
 	private StateMachine.Enemy logic;
 	public string role;
+	private float speed = 1.0f;
+	private float jumpHeight = 10.0f;
 	//StateMachine.Enemy foolToBeWrecked = new StateMachine.Enemy();
 	//StateMachine.Enemy.Role role;
 
@@ -37,7 +39,6 @@ public class EnemyBehaviour : MonoBehaviour {
     void LateUpdate () {
 		//run change state logic
     	//set behaviour according to the state
-		/*
 		if (logic.role == StateMachine.Enemy.Role.NINJA) {
 			if (rock.transform.position.x < this.transform.position.x) {
 				if (logic.isBrave >= logic.isAfraid) {
@@ -51,7 +52,7 @@ public class EnemyBehaviour : MonoBehaviour {
 				else logic.currentState = StateMachine.Enemy.State.PANIC;
 			}
 		}
-		DoAction(); */
+		DoAction();
     }
 
 	void DoAction()
@@ -144,26 +145,31 @@ public class EnemyBehaviour : MonoBehaviour {
          * maybe have different speeds depending on the role
          */
 		Vector2 goal = new Vector2(rock.transform.position.x + 10.0f, this.transform.position.y);
-		float speed = 1.0f;
 		this.transform.Translate(goal.normalized * speed * Time.deltaTime);
 	}
     
 	void Throw()
     {
+		print ("Pretend I threw something");
+		print ("It was fucking majestic");
         //gets current position of the rock and throws a pebble in that direction
         //pebbles reduce momentum by a small amount
     }
     
 	void Jump()
     {
+		Vector2 goal = new Vector2 (this.transform.position.x, this.transform.position.y + jumpHeight);
+		this.transform.Translate(goal.normalized * speed * Time.deltaTime);
 		//needs to move up and fall back down, should have gravity applied
-		this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/GoblinNinja_8");
+		//this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/GoblinNinja_8");
 	}
     
 	void Crouch()
     {
+		print ("Pretend I crouched");
+		print ("Picture it");
 		//changes to a crouching sprite, which gives it a smaller hitbox
-		this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/GoblinNinja_5");
+		//this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/GoblinNinja_5");
 	}
     
 	void Panic()
