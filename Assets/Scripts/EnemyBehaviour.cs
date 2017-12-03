@@ -35,6 +35,7 @@ public class EnemyBehaviour : MonoBehaviour {
 			logic.role = StateMachine.Enemy.Role.BIRD;
 	}
 
+	bool hasActed = false;
     // Update is called once per frame, LateUpdate performs calculations before running the commands
     void LateUpdate () {
 		//run change state logic
@@ -52,7 +53,10 @@ public class EnemyBehaviour : MonoBehaviour {
 				else logic.currentState = StateMachine.Enemy.State.PANIC;
 			}
 		}
-		DoAction();
+		if (!hasActed) {
+			DoAction();
+			hasActed = true;
+		}
     }
 
 	void DoAction()
