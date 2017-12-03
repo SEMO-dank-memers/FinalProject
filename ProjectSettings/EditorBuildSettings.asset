@@ -17,3 +17,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/How To Play.unity
     guid: 39911548e96032c4bab9c4991f774315
+  - enabled: 1
+    path: Assets/Scenes/Aaron Details.unity
+    guid: fce7668594af7d6478aaf4fa631fe717
+  - enabled: 1
+    path: Assets/Scenes/Jon Details.unity
+    guid: 6095eed2219c4a14187faa65aa93f484
+  - enabled: 1
+    path: Assets/Scenes/Michael Details.unity
+    guid: d689d43861ea60e4fb326a0d0f742c21
+  - enabled: 1
+    path: Assets/Scenes/Stephen Details.unity
+    guid: 00000000000000000000000000000000
