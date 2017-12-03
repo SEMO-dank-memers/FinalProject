@@ -2,13 +2,18 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemyBehaviour : MonoBehaviour {
-
+public class EnemyBehaviour : MonoBehaviour
+{
 	//public GameObject enemy;
     public GameObject rock;
 	private Rigidbody2D rb;
 	public Transform goblin;
 	private StateMachine.Enemy logic;
+	public Sprite crouch;
+	public Sprite ninjaPanic;
+	public Sprite punch;
+	public Sprite trollPanic;
+	public Sprite ninja;
 	public string role;
 	private float speed = 5.0f;
 	private float jumpHeight = 2.0f;
@@ -35,27 +40,32 @@ public class EnemyBehaviour : MonoBehaviour {
 			logic.role = StateMachine.Enemy.Role.BIRD;
 	}
 
-	bool hasActed = false;
     // Update is called once per frame, LateUpdate performs calculations before running the commands
     void LateUpdate () {
 		//run change state logic
     	//set behaviour according to the state
 		if (logic.role == StateMachine.Enemy.Role.NINJA) {
-			if (rock.transform.position.x < this.transform.position.x) {
+			//if (rock.transform.position.x < this.transform.position.x && this.transform.position.x - rock.transform.position.x < 4) {
+			if (this.transform.position.x - rock.transform.position.x < 4 && this.transform.position.x - rock.transform.position.x > -10) {
+				print(this.transform.position.x - rock.transform.position.x + " triggering.");
 				if (logic.isBrave >= logic.isAfraid) {
-					if (rock.transform.position.y > (this.transform.position.y + 5.0f)) {
+					if (rock.transform.position.y > (this.transform.position.y + 1)) {
+						print("CROUCHING!!!");
 						logic.currentState = StateMachine.Enemy.State.CROUCH;
-					}
-					else if (rock.transform.position.y <= (this.transform.position.y + 5.0f)) {
+					//} else if (rock.transform.position.y <= (this.transform.position.y)) {
+					} else {
+						print("JUMPING!!!");
 						logic.currentState = StateMachine.Enemy.State.JUMP;
 					}
+				} else {
+					print("PANICKING!!!");
+					logic.currentState = StateMachine.Enemy.State.PANIC;
 				}
-				else logic.currentState = StateMachine.Enemy.State.PANIC;
 			}
 		}
-		if (!hasActed) {
+
+		if (this.transform.position.x - rock.transform.position.x < 4 && this.transform.position.x - rock.transform.position.x > -10) {
 			DoAction();
-			hasActed = true;
 		}
     }
 
@@ -109,10 +119,12 @@ public class EnemyBehaviour : MonoBehaviour {
          * we should call a destructor to get rid of this ai so we're not taking up excess resources
          */
 
-		if (rock.transform.position.x > (this.transform.position.x + 200.0f)) //if rock is 200 units to the right of this gameobject
+		/* if (rock.transform.position.x > (this.transform.position.x + 200.0f)) //if rock is 200 units to the right of this gameobject
 			print("I would have destroyed myself"); 
 			//Destroy(this); //commit harakiri
-		else if (logic.role == StateMachine.Enemy.Role.NINJA) {
+		else */
+
+		if (logic.role == StateMachine.Enemy.Role.NINJA) {
 			if (rock.transform.position.x < this.transform.position.x) {
 				if (logic.isBrave >= logic.isAfraid) {
 					if (rock.transform.position.y > (this.transform.position.y + 5.0f)) {
@@ -143,17 +155,14 @@ public class EnemyBehaviour : MonoBehaviour {
 
     }
     
-	IEnumerator WaitForJump (){ //this triggers the end of the game
-		yield return new WaitForSecondsRealtime (2);
-	}
-
 	void Run()
     {
 		/* gets position of the rock and moves away from it, might need to be careful to not
          * let them move into the air. They need to stay on the ground/
          * maybe have different speeds depending on the role
          */
-		Vector2 goal = new Vector2 (rock.transform.position.x + 10.0f, this.transform.position.y);
+		Vector2 goal = new Vector2(rock.transform.position.x + 10.0f, this.transform.position.y);
+		this.transform.Translate(goal.normalized * speed * Time.deltaTime);
 	}
     
 	void Throw()
@@ -164,28 +173,60 @@ public class EnemyBehaviour : MonoBehaviour {
         //pebbles reduce momentum by a small amount
     }
     
+	public uint counter = 0;
+	bool wasCalled = false;
+	Vector2 first, goal;
+	private float t = 0; //time
+
 	void Jump()
     {
-		Vector2 temp = new Vector2(rock.transform.position.x, this.transform.position.y);
-		Vector2 goal = new Vector2 (this.transform.position.x, this.transform.position.y + jumpHeight);
-		this.transform.Translate(goal.normalized * speed * Time.deltaTime);
-		StartCoroutine ("WaitForJump");
-		this.transform.Translate(temp.normalized * speed * Time.deltaTime);
+		this.GetComponent<SpriteRenderer>().sprite = ninja;
+
+		if (!wasCalled) {
+			first = new Vector3(this.transform.position.x, this.transform.position.y, 0.0f);
+			goal = new Vector3(this.transform.position.x, this.transform.position.y + jumpHeight, 0.0f);
+			wasCalled = true;
+			print("Was Called");
+		} else {
+			//print("Was already called!");
+		}
+
+		if (counter < 200) {
+			t += Time.deltaTime / 0.5f;
+
+			if (counter < 50) {
+				goblin.position = Vector3.Lerp(first, goal, t);
+				counter++;
+			} else if (counter == 50) {
+				t = 0;
+				counter++;
+			} else {
+				goblin.position = Vector3.Lerp(goal, first, t);
+				counter++;
+			}
+		}
+
 		//needs to move up and fall back down, should have gravity applied
 		//this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/GoblinNinja_8");
 	}
     
 	void Crouch()
-    {
-		print ("Pretend I crouched");
-		print ("Picture it");
+	{
+		this.GetComponent<SpriteRenderer>().sprite = crouch;
 		//changes to a crouching sprite, which gives it a smaller hitbox
 		//this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/GoblinNinja_5");
 	}
     
 	void Panic()
+	{
+		if (logic.role == StateMachine.Enemy.Role.NINJA)
+			NinjaPanic();
+	}
+
+	void NinjaPanic()
     {
         //changes sprite to a panicking sprite, and just stands still
+		this.GetComponent<SpriteRenderer>().sprite = ninjaPanic;
     }
     
 	void Fly()
