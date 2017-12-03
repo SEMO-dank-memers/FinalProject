@@ -139,7 +139,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     }
     
-	IEnumerator WaitForJump (){ //this triggers the end of the game
+	IEnumerator WaitForJump (){
 		yield return new WaitForSecondsRealtime (2);
 	}
 
