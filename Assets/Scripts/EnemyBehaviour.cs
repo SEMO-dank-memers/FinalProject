@@ -139,14 +139,17 @@ public class EnemyBehaviour : MonoBehaviour {
 
     }
     
+	IEnumerator WaitForJump (){ //this triggers the end of the game
+		yield return new WaitForSecondsRealtime (2);
+	}
+
 	void Run()
     {
 		/* gets position of the rock and moves away from it, might need to be careful to not
          * let them move into the air. They need to stay on the ground/
          * maybe have different speeds depending on the role
          */
-		Vector2 goal = new Vector2(rock.transform.position.x + 10.0f, this.transform.position.y);
-		this.transform.Translate(goal.normalized * speed * Time.deltaTime);
+		Vector2 goal = new Vector2 (rock.transform.position.x + 10.0f, this.transform.position.y);
 	}
     
 	void Throw()
@@ -159,8 +162,11 @@ public class EnemyBehaviour : MonoBehaviour {
     
 	void Jump()
     {
+		Vector2 temp = new Vector2(rock.transform.position.x, this.transform.position.y);
 		Vector2 goal = new Vector2 (this.transform.position.x, this.transform.position.y + jumpHeight);
 		this.transform.Translate(goal.normalized * speed * Time.deltaTime);
+		StartCoroutine ("WaitForJump");
+		this.transform.Translate(temp.normalized * speed * Time.deltaTime);
 		//needs to move up and fall back down, should have gravity applied
 		//this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/GoblinNinja_8");
 	}
@@ -176,7 +182,6 @@ public class EnemyBehaviour : MonoBehaviour {
 	void Panic()
     {
         //changes sprite to a panicking sprite, and just stands still
-		Run();
     }
     
 	void Fly()
