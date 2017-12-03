@@ -154,7 +154,7 @@ public class EnemyBehaviour : MonoBehaviour
         //uses a punching animation, and reduces momentum more significantly than a throw if it hits.
 
     }
-    
+
 	void Run()
     {
 		/* gets position of the rock and moves away from it, might need to be careful to not
