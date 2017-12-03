@@ -24,7 +24,8 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	private int lives = playerStats.lives;
     //private float timestamp;
     public AudioClip Explosion;
-    private AudioSource source;
+    public AudioClip Ping;
+    //private AudioSource source2;
 
     void Start () {
 		cacheRB = GetComponent<Rigidbody2D>();
@@ -33,15 +34,12 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 		this.transform.localScale = new Vector3 (playerStats.playerSize.x, playerStats.playerSize.y, playerStats.playerSize.z);
 	}
 
-    private void Awake()
-    {
-        source = GetComponent<AudioSource>();
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.gameObject.tag == "Enemy")
         {
+            AudioSource source = GetComponent<AudioSource>();
             source.PlayOneShot(Explosion);
         }
     }
@@ -51,7 +49,9 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 		if (coll.gameObject.tag == "Coin") {
 			coll.gameObject.SetActive (false);
 		}
-		playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier);
+        AudioSource source = GetComponent<AudioSource>();
+        source.PlayOneShot(Ping);
+        playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier);
 	}
 
 	IEnumerator CountDown (){ //this triggers the end of the game
