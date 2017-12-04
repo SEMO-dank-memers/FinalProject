@@ -9,7 +9,12 @@ public class RollingBall : MonoBehaviour {
 	public Canvas endGameCanvas; //allows the editor to hand the script the upgrade GUI so we can activate it only when the game has ended [the ball starts rolling backwards with no way to recover]
 	[Tooltip("Canvas that contains UI elements visable during the game")]
 	public Canvas inGameCanvas; //allows the editor to hand the script the canvas that contains all the inGame GUI elements for update purposes
+	[Tooltip("Sound played when hitting an enemy")]
+	public AudioClip Explosion; //sound to play when hitting an enemy
+	[Tooltip("Sound played when hitting a coin")]
+	public AudioClip Ping; // sound to play when hitting a coin
 	//
+
 	//private vars
 	private Rigidbody2D cacheRB; //the rigidbody of the rock for physics calculations
 	bool gameOver = false; //has the ball started rolling backwards with no way to recover?
@@ -17,8 +22,6 @@ public class RollingBall : MonoBehaviour {
 	bool triggerForwardPush = false; //has the player triggered a forward push in the current frame?
 	private float initialForce; // the initial force applied to the rock when the game starts
 	private int lives = playerStats.lives; //how many "lives" does the player have left, using a life will throw the rock forward when otherwise the game would have ended
-    public AudioClip Explosion;
-    public AudioClip Ping;
 	//
 
     void Start () {
@@ -85,7 +88,7 @@ public class RollingBall : MonoBehaviour {
 		if ((playerStats.currentUpwardPushes == 0) && (playerStats.currentForwardPushes == 0) && (!gameOver)) { //if we are out of ways to speed up the rock and its going backwards then the game is over
 			if (((cacheRB.velocity.x == 0) || (cacheRB.velocity.x < Vector2.zero.x)) && lives == 1) {
 				StartCoroutine ("CountDown");
-			} else if ((cacheRB.velocity.x == 0) || (cacheRB.velocity.x < Vector2.zero.x)) {//if the ball is rolling backwards with no way to save itself but we have a live then use up one live and throw the rock forward
+			} else if ((cacheRB.velocity.x == 0) || (cacheRB.velocity.x < Vector2.zero.x)) {//if the ball is rolling backwards with no way to save itself but we have a life then use up one live and throw the rock forward
 				lives--;
 				playerStats.currentPlayerLives--;
 				cacheRB.AddForce (new Vector2 (30.0f, 0.0f), ForceMode2D.Impulse);
