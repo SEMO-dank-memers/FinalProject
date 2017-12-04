@@ -16,6 +16,7 @@ public static class playerStats{
 	public static int lives = 1;
 	public static int currentPlayerLives;
 	public static Vector3 playerSize = new Vector3(0.83f, 0.83f, 1.0f);
+	public static float initialForce = 5.0f;
 };
 
 public class RestartGame : MonoBehaviour {

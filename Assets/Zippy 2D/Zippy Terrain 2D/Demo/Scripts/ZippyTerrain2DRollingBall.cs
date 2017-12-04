@@ -10,9 +10,6 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	public Canvas endGameCanvas;
 	[Tooltip("Canvas that contains UI elements visable during the game")]
 	public Canvas inGameCanvas;
-	[Range(2.0f, 10.0f)] // bounds the inital force for testing and tweaking between these values
-	[Tooltip("Initial force applied to the rock when the game starts")]
-	public float initialForce; // the initial force applied to the rock when the game starts
 	//
 
 	Rigidbody2D cacheRB;
@@ -20,6 +17,7 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 	bool gameOver = false;
 	bool triggerUpwardPush = false;
 	bool triggerForwardPush = false;
+	private float initialForce; // the initial force applied to the rock when the game starts
     public float timeBetweenShots = 0.01f;  // Allow 1 push/jump per second
 	private int lives = playerStats.lives;
     //private float timestamp;
@@ -28,6 +26,7 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
     //private AudioSource source2;
 
     void Start () {
+		initialForce = playerStats.initialForce;
 		cacheRB = GetComponent<Rigidbody2D>();
 		//initial push on the rock
 		cacheRB.AddForce(new Vector2(initialForce, 0.0f), ForceMode2D.Impulse);
