@@ -50,7 +50,7 @@ public class ZippyTerrain2DRollingBall : MonoBehaviour {
 		}
         AudioSource source = GetComponent<AudioSource>();
         source.PlayOneShot(Ping);
-        playerStats.playerMoney = playerStats.playerMoney + (5000 * playerStats.moneyMultiplier);
+        playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier);
 	}
 
 	IEnumerator CountDown (){ //this triggers the end of the game

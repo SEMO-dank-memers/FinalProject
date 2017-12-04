@@ -61,7 +61,6 @@ public class ZippyTerrain2D : MonoBehaviour {
 	[HideInInspector] public bool updateCollider = true;
 	[HideInInspector] public bool smoothAll = true;
 #endif
-
 	//Component references
 	[HideInInspector]	public Transform cacheTransform;
 	[HideInInspector]	public MeshFilter cacheMeshFilter;
@@ -188,9 +187,9 @@ public class ZippyTerrain2D : MonoBehaviour {
 			e.points = new Vector2[2];
 			e.enabled = false;
 		}
-		if (!updateCollider) {
-			return;
-		}
+		//if (!updateCollider) {
+			//return;
+		//}
 
 		if (colliderType == ColliderEnum.Edge) {
 			if (e == null) e = gameObject.AddComponent<EdgeCollider2D>();
