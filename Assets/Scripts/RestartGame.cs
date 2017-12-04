@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public static class playerStats{
+	//static vars that persist between each play through of the game, these are used in order to keep track of the proper values to use across the game scripts as well as to keep track of the upgrades the players have bought.
 	public static int currentForwardPushLevel = 1;
 	public static int currentUpwardPushLevel = 1;
 	public static int currentForwardPushes = 3;
@@ -25,21 +26,20 @@ public class RestartGame : MonoBehaviour {
 
 	private static GameObject objectInstance;
 	void Awake(){
-		playerStats.currentPlayerLives = playerStats.lives;
+		playerStats.currentPlayerLives = playerStats.lives; //lives the rock will have for this play through
 		playerStats.currentForwardPushes = 3; //initial forward pushes
 		playerStats.currentUpwardPushes = 3; //initial upward pushes
-		playerStats.currentForwardPushes *= playerStats.currentForwardPushLevel;
+		playerStats.currentForwardPushes *= playerStats.currentForwardPushLevel; //currentForwardPushes - 3 * the currentForwardPushLevel(upgrades the player has bought essentially)
 		playerStats.currentUpwardPushes *= playerStats.currentUpwardPushLevel;
-		DontDestroyOnLoad (this);
-		if (objectInstance == null) {
+		DontDestroyOnLoad (this); //keep the gameRestarter object between scenes that way we can keep track of values throughout the game
+		if (objectInstance == null) { //track if this is the first object
 			objectInstance = gameObject;
 
 		}
 	}
 
 	public void Restart(){
-		//oh god there is so many better ways to do this but the time isn't worth it.....
-		//where is your god now encapsulation?? WHERE?
+		//called by the game to restart in order to do another run
 		SceneManager.LoadScene ("Main");
 		DestroyObject (gameObject);
 	}
