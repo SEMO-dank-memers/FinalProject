@@ -49,7 +49,7 @@ public class EnemyBehaviour : MonoBehaviour
 			if (this.transform.position.x - rock.transform.position.x < 4 && this.transform.position.x - rock.transform.position.x > -10) {
 				print(this.transform.position.x - rock.transform.position.x + " triggering.");
 				if (logic.isBrave >= logic.isAfraid) {
-					if (rock.transform.position.y > (this.transform.position.y + 1)) {
+					if (((rock.transform.position.y) > (this.transform.position.y + 1)) && ((rock.transform.position.x) <= (this.transform.position.x))) {
 						print("CROUCHING!!!");
 						logic.currentState = StateMachine.Enemy.State.CROUCH;
 					//} else if (rock.transform.position.y <= (this.transform.position.y)) {
@@ -227,6 +227,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //changes sprite to a panicking sprite, and just stands still
 		this.GetComponent<SpriteRenderer>().sprite = ninjaPanic;
+		Run ();
     }
     
 	void Fly()
