@@ -5,6 +5,6 @@ public class BackController : MonoBehaviour {
 
     public void NextScene()
     {
-        SceneManager.LoadScene("Menu Screen");
+		SceneManager.LoadScene("Menu Screen");//change to the specified scene
     }
 }

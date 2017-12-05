@@ -5,6 +5,6 @@ public class Control : MonoBehaviour
 {
     public void NextScene()
     {
-        SceneManager.LoadScene("Main");
+		SceneManager.LoadScene("Main");//change to the specified scene
     }
 }

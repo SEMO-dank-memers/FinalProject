@@ -4,6 +4,6 @@ using UnityEngine.SceneManagement;
 public class JonDetails : MonoBehaviour {
 	public void NextScene()
 	{
-		SceneManager.LoadScene("Jon Details");
+		SceneManager.LoadScene("Jon Details");//change to the specified scene
 	}
 }

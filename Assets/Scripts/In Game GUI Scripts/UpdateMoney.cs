@@ -6,6 +6,6 @@ using UnityEngine.UI;
 public class UpdateMoney : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
-		this.GetComponent<Text> ().text = "  Player Money: " + playerStats.playerMoney;
+		this.GetComponent<Text> ().text = "  Player Money: " + playerStats.playerMoney; // update the ui to reflect the amount of money we have
 	}
 }
