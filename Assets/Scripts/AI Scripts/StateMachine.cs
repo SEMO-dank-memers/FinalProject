@@ -75,10 +75,8 @@ public static class StateMachine {
                     break; //can just break since we have initialized values
             }
             //call upon chosen fuzzy function using the above floats
-            //this.isBrave = Fuzzy.Linear(randomNum, lowerThreshold, upperThreshold);
-            //this.isAfraid = Fuzzy.NOT(isBrave);
-			isBrave = 1;
-			isAfraid = 0;
+            this.isBrave = Fuzzy.Linear(randomNum, lowerThreshold, upperThreshold);
+            this.isAfraid = Fuzzy.NOT(isBrave);
         }
         
 		public void GenerateEnemy() //also Sets Role
