@@ -62,7 +62,13 @@ public class EnemyBehaviour : MonoBehaviour
 				jumpCall = true; //out of range, reset jump
 			}
 		} else if(logic.role == StateMachine.Enemy.Role.TROLL) {
-			
+			if (this.transform.position.x - rock.transform.position.x < 4 && this.transform.position.x - rock.transform.position.x > -10) {
+				if (logic.isBrave >= logic.isAfraid) {
+					logic.currentState = StateMachine.Enemy.State.RUN;
+				} else {
+					logic.currentState = StateMachine.Enemy.State.PANIC;
+				}
+			}
 		} else if(logic.role == StateMachine.Enemy.Role.BRAWLER) {
 			
 		} else if(logic.role == StateMachine.Enemy.Role.THROWER) {
@@ -90,7 +96,7 @@ public class EnemyBehaviour : MonoBehaviour
 		} else if (logic.currentState == StateMachine.Enemy.State.PUNCH) {
 			
 		} else if (logic.currentState == StateMachine.Enemy.State.RUN) {
-			
+			Run();
 		} else if (logic.currentState == StateMachine.Enemy.State.THROW) {
 			
 		}
@@ -107,7 +113,7 @@ public class EnemyBehaviour : MonoBehaviour
 		} else if (logic.currentState == StateMachine.Enemy.State.JUMP) {
 			//set this in the fucntion itself
 		} else if (logic.currentState == StateMachine.Enemy.State.ATTACK) {
-
+			//do nothing
 		} else if (logic.currentState == StateMachine.Enemy.State.PUNCH) {
 			this.GetComponent<SpriteRenderer>().sprite = punch;
 		} else if (logic.currentState == StateMachine.Enemy.State.RUN) {
@@ -167,8 +173,7 @@ public class EnemyBehaviour : MonoBehaviour
          * let them move into the air. They need to stay on the ground/
          * maybe have different speeds depending on the role
          */
-		//Vector2 goal = new Vector2(rock.transform.position.x + 10.0f, this.transform.position.y);
-		//this.transform.Translate(goal.normalized * speed * Time.deltaTime);
+		rb.AddForce(new Vector2(1.0f, -0.1f), ForceMode2D.Impulse);
 	}
     
 	void Throw()
