@@ -25,6 +25,7 @@ public static class StateMachine {
 	 */
 	public class Enemy
     {
+		public Sprite normal;
         public enum State { IDLE, THROW, ATTACK, PUNCH, RUN, CROUCH, JUMP, PANIC, FLY, CHARGE };
         public enum Role { UNASSIGNED, BRAWLER, THROWER, TROLL, NINJA, BIRD };
         public State currentState { get; set; }
@@ -81,14 +82,6 @@ public static class StateMachine {
         
 		public void GenerateEnemy() //also Sets Role
         {
-            //float rand = Random.Range(0.0f, 10.0f);
-			/*
-            if (rand < 5.0f && rand >= 2.5f) enemy.role = Enemy.Role.THROWER;
-            else if (rand < 7.5f && rand >= 5.0f) enemy.role = Enemy.Role.BRAWLER;
-            else if (rand < 10.0f && rand >= 7.5f) enemy.role = Enemy.Role.NINJA;
-            else enemy.role = Enemy.Role.TROLL;
-            */
-			this.role = Enemy.Role.NINJA;
             this.SetBravery(this.role);
         }
     }

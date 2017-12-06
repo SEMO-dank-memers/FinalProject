@@ -23,8 +23,8 @@ public class EnemyBehaviour : MonoBehaviour
 	void Start()
 	{
 		logic = new StateMachine.Enemy();
-		logic.GenerateEnemy();
 		rb = GetComponent<Rigidbody2D>();
+		logic.normal = this.GetComponent<SpriteRenderer>().sprite;
 
 		if (role == "unassigned")
 			logic.role = StateMachine.Enemy.Role.UNASSIGNED;
@@ -36,6 +36,8 @@ public class EnemyBehaviour : MonoBehaviour
 			logic.role = StateMachine.Enemy.Role.NINJA;
 		else if (role == "brawler")
 			logic.role = StateMachine.Enemy.Role.BRAWLER;
+
+		logic.GenerateEnemy();
 	}
 
 	bool jumpCall = true; //setter to make sure the jump eventually stops
