@@ -43,15 +43,15 @@ public class RollingBall : MonoBehaviour {
     }
 
 
-    void OnTriggerEnter2D(Collider2D coll){
+    void OnTriggerEnter2D(Collider2D coll) {
 	//when the rock hits a coin
-		if (coll.gameObject.tag == "Coin") {
-			coll.gameObject.SetActive (false);
-		}
-        AudioSource source = GetComponent<AudioSource>();
-        source.PlayOneShot(Ping);
-        playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier); //increase the players money in playerStats so that it can be accessed throughout the game
+	if (coll.gameObject.tag == "Coin") {
+		coll.gameObject.SetActive (false);
+		AudioSource source = GetComponent<AudioSource>();
+		source.PlayOneShot(Ping);
+		playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier); //increase the players money in playerStats so that it can be accessed throughout the game
 	}
+}
 
 	IEnumerator CountDown (){
 		//called to start the end of the game, when the rock is rolling backwards without any way of saving itself

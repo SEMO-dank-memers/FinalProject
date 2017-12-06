@@ -24,6 +24,7 @@ public class EnemyBehaviour : MonoBehaviour
 	void Start()
 	{
 		logic = new StateMachine.Enemy();
+		logic.GenerateEnemy();
 		rb = GetComponent<Rigidbody2D>();
 
 		if (role == "unassigned")
@@ -45,18 +46,19 @@ public class EnemyBehaviour : MonoBehaviour
 		if (logic.role == StateMachine.Enemy.Role.NINJA) {
 			//if (rock.transform.position.x < this.transform.position.x && this.transform.position.x - rock.transform.position.x < 4) {
 			if (this.transform.position.x - rock.transform.position.x < 4 && this.transform.position.x - rock.transform.position.x > -10) {
-				print(this.transform.position.x - rock.transform.position.x + " triggering.");
+				//print(this.transform.position.x - rock.transform.position.x + " triggering.");
 				if (logic.isBrave >= logic.isAfraid) {
+					//print(logic.isBrave);
 					if (((rock.transform.position.y) > (this.transform.position.y + 1)) && ((rock.transform.position.x) <= (this.transform.position.x))) {
-						print("CROUCHING!!!");
+						//print("CROUCHING!!!");
 						logic.currentState = StateMachine.Enemy.State.CROUCH;
 					//} else if (rock.transform.position.y <= (this.transform.position.y)) {
 					} else {
-						print("JUMPING!!!");
+						//print("JUMPING!!!");
 						logic.currentState = StateMachine.Enemy.State.JUMP;
 					}
 				} else {
-					print("PANICKING!!!");
+					//print("PANICKING!!!");
 					logic.currentState = StateMachine.Enemy.State.PANIC;
 				}
 			}
@@ -175,8 +177,8 @@ public class EnemyBehaviour : MonoBehaviour
          * let them move into the air. They need to stay on the ground/
          * maybe have different speeds depending on the role
          */
-		Vector2 goal = new Vector2(rock.transform.position.x + 10.0f, this.transform.position.y);
-		this.transform.Translate(goal.normalized * speed * Time.deltaTime);
+		//Vector2 goal = new Vector2(rock.transform.position.x + 10.0f, this.transform.position.y);
+		//this.transform.Translate(goal.normalized * speed * Time.deltaTime);
 	}
     
 	void Throw()
@@ -196,6 +198,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
 		this.GetComponent<SpriteRenderer>().sprite = ninja;
 
+		/*
 		if (!wasCalled) {
 			first = new Vector3(this.transform.position.x, this.transform.position.y, 0.0f);
 			goal = new Vector3(this.transform.position.x, this.transform.position.y + jumpHeight, 0.0f);
@@ -219,6 +222,10 @@ public class EnemyBehaviour : MonoBehaviour
 				counter++;
 			}
 		}
+		*/
+
+		//rb.AddForce(new Vector3(0.0f, 2.0f, 0.0f), ForceMode2D.Impulse);
+		this.transform.Translate(new Vector3 (0, 0.15f, 0));
 
 		//needs to move up and fall back down, should have gravity applied
 		//this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/GoblinNinja_8");
@@ -233,19 +240,17 @@ public class EnemyBehaviour : MonoBehaviour
     
 	void Panic()
 	{
-		if (logic.role == StateMachine.Enemy.Role.NINJA){
-			//NinjaPanic();
+		if (logic.role == StateMachine.Enemy.Role.NINJA) {
 			this.GetComponent<SpriteRenderer>().sprite = ninjaPanic;
-			Run ();
-		} else if (logic.role == StateMachine.Enemy.Role.TROLL){
+		} else if (logic.role == StateMachine.Enemy.Role.TROLL) {
 			this.GetComponent<SpriteRenderer>().sprite = ninjaPanic; //change to troll panic
-			Run ();
-		} else if (logic.role == StateMachine.Enemy.Role.BRAWLER){
+			Run();
+		} else if (logic.role == StateMachine.Enemy.Role.BRAWLER) {
 			this.GetComponent<SpriteRenderer>().sprite = ninjaPanic; //change to brawler panic
-			Run ();
-		} else if (logic.role == StateMachine.Enemy.Role.THROWER){
+			Run();
+		} else if (logic.role == StateMachine.Enemy.Role.THROWER) {
 			this.GetComponent<SpriteRenderer>().sprite = ninjaPanic; //change to thrower panic
-			Run ();
+			Run();
 		}
 	}
 /*
