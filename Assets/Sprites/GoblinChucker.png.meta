@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 23fb1277539b6bc419a0fc8b1be76a44
-timeCreated: 1510869068
+guid: 4a81d0b1a849ac749ba1dd56b61f3055
+timeCreated: 1512531317
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -16,9 +16,6 @@ TextureImporter:
     21300018: GoblinChucker_9
     21300020: GoblinChucker_10
     21300022: GoblinChucker_11
-    21300024: GoblinChucker_12
-    21300026: GoblinChucker_13
-    21300028: GoblinChucker_14
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -89,7 +86,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 15
-        y: 242
+        y: 247
         width: 44
         height: 64
       alignment: 0
@@ -102,9 +99,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 9
-        y: 172
+        y: 177
         width: 37
-        height: 58
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,9 +112,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 58
-        y: 171
+        y: 176
         width: 39
-        height: 58
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,10 +124,10 @@ TextureImporter:
       name: GoblinChucker_3
       rect:
         serializedVersion: 2
-        x: 107
-        y: 171
+        x: 110
+        y: 176
         width: 37
-        height: 58
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +137,10 @@ TextureImporter:
       name: GoblinChucker_4
       rect:
         serializedVersion: 2
-        x: 152
-        y: 170
-        width: 41
-        height: 59
+        x: 158
+        y: 175
+        width: 43
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +150,10 @@ TextureImporter:
       name: GoblinChucker_5
       rect:
         serializedVersion: 2
-        x: 10
-        y: 92
+        x: 9
+        y: 93
         width: 37
-        height: 58
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,10 +163,10 @@ TextureImporter:
       name: GoblinChucker_6
       rect:
         serializedVersion: 2
-        x: 57
-        y: 92
+        x: 67
+        y: 96
         width: 45
-        height: 58
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,10 +176,10 @@ TextureImporter:
       name: GoblinChucker_7
       rect:
         serializedVersion: 2
-        x: 117
-        y: 94
+        x: 127
+        y: 98
         width: 45
-        height: 58
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,10 +189,10 @@ TextureImporter:
       name: GoblinChucker_8
       rect:
         serializedVersion: 2
-        x: 182
-        y: 95
-        width: 37
-        height: 58
+        x: 184
+        y: 99
+        width: 45
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +202,10 @@ TextureImporter:
       name: GoblinChucker_9
       rect:
         serializedVersion: 2
-        x: 239
-        y: 94
-        width: 37
-        height: 58
+        x: 235
+        y: 99
+        width: 41
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,7 +216,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 294
-        y: 113
+        y: 118
         width: 15
         height: 15
       alignment: 0
@@ -231,49 +228,10 @@ TextureImporter:
       name: GoblinChucker_11
       rect:
         serializedVersion: 2
-        x: 8
-        y: 22
-        width: 47
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: GoblinChucker_12
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 22
-        width: 44
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: GoblinChucker_13
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 21
-        width: 50
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: GoblinChucker_14
-      rect:
-        serializedVersion: 2
-        x: 184
-        y: 19
-        width: 38
-        height: 59
+        x: 9
+        y: 5
+        width: 46
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
