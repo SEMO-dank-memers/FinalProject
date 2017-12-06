@@ -38,7 +38,7 @@ public class EnemyBehaviour : MonoBehaviour
 			logic.role = StateMachine.Enemy.Role.BRAWLER;
 	}
 
-	bool jumpCall = true;
+	bool jumpCall = true; //setter to make sure the jump eventually stops
 
     //Update is called once per frame, LateUpdate performs calculations before running the commands
     void LateUpdate () {
@@ -90,6 +90,27 @@ public class EnemyBehaviour : MonoBehaviour
 			
 		} else if (logic.currentState == StateMachine.Enemy.State.THROW) {
 			
+		}
+	}
+
+	void setSprite()
+	{
+		if (logic.currentState == StateMachine.Enemy.State.PANIC) {
+			Panic();
+		} else if (logic.currentState == StateMachine.Enemy.State.IDLE) {
+			Idle();
+		} else if (logic.currentState == StateMachine.Enemy.State.CROUCH) {
+			Crouch();
+		} else if (logic.currentState == StateMachine.Enemy.State.JUMP) {
+			Jump();
+		} else if (logic.currentState == StateMachine.Enemy.State.ATTACK) {
+
+		} else if (logic.currentState == StateMachine.Enemy.State.PUNCH) {
+
+		} else if (logic.currentState == StateMachine.Enemy.State.RUN) {
+
+		} else if (logic.currentState == StateMachine.Enemy.State.THROW) {
+
 		}
 	}
 
