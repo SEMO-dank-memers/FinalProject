@@ -76,6 +76,7 @@ public class EnemyBehaviour : MonoBehaviour
 
 	void DoAction()
 	{
+		setSprite();
 		if (logic.currentState == StateMachine.Enemy.State.PANIC) {
 			Panic();
 		} else if (logic.currentState == StateMachine.Enemy.State.IDLE) {
@@ -98,21 +99,21 @@ public class EnemyBehaviour : MonoBehaviour
 	void setSprite()
 	{
 		if (logic.currentState == StateMachine.Enemy.State.PANIC) {
-			Panic();
+			this.GetComponent<SpriteRenderer>().sprite = panic;
 		} else if (logic.currentState == StateMachine.Enemy.State.IDLE) {
-			Idle();
+			this.GetComponent<SpriteRenderer>().sprite = logic.normal;
 		} else if (logic.currentState == StateMachine.Enemy.State.CROUCH) {
-			Crouch();
+			this.GetComponent<SpriteRenderer>().sprite = crouch;
 		} else if (logic.currentState == StateMachine.Enemy.State.JUMP) {
-			Jump();
+			//set this in the fucntion itself
 		} else if (logic.currentState == StateMachine.Enemy.State.ATTACK) {
 
 		} else if (logic.currentState == StateMachine.Enemy.State.PUNCH) {
-
+			this.GetComponent<SpriteRenderer>().sprite = punch;
 		} else if (logic.currentState == StateMachine.Enemy.State.RUN) {
-
+			this.GetComponent<SpriteRenderer>().sprite = panic;
 		} else if (logic.currentState == StateMachine.Enemy.State.THROW) {
-
+			this.GetComponent<SpriteRenderer>().sprite = panic;
 		}
 	}
 
@@ -194,9 +195,12 @@ public class EnemyBehaviour : MonoBehaviour
 		if (counter < 15) {
 			this.transform.Translate(new Vector3(0, 0.30f, 0));
 			counter++;
+			this.GetComponent<SpriteRenderer>().sprite = jump;
 		} else if (counter < 20) {
 			this.transform.Translate(new Vector3(0, 0.10f, 0));
 			counter++;
+		} else {
+			this.GetComponent<SpriteRenderer>().sprite = logic.normal;
 		}
 	}
     
