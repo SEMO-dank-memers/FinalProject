@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class RollingBall : MonoBehaviour {
-
+public class RollingBall : MonoBehaviour
+{
 	//public vars
 	[Header("Static/Starting Traits")]
 	[Tooltip("Canvas that contains the Upgrade GUI in order to display when the game ends")]
@@ -24,7 +24,8 @@ public class RollingBall : MonoBehaviour {
 	private int lives = playerStats.lives; //how many "lives" does the player have left, using a life will throw the rock forward when otherwise the game would have ended
 	//
 
-    void Start () {
+    void Start ()
+	{
 		initialForce = playerStats.initialForce; //how much force do we use depending on the players upgrade level
 		cacheRB = GetComponent<Rigidbody2D>(); //assignment to rock's rigidbody
 		cacheRB.AddForce(new Vector2(initialForce, 0.0f), ForceMode2D.Impulse);//initial push on the rock
@@ -32,45 +33,48 @@ public class RollingBall : MonoBehaviour {
 	}
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-	//when the rock hits an enemy
+    private void OnCollisionEnter2D(Collision2D collision) //when the rock hits an enemy
     {
-        if (collision.transform.gameObject.tag == "Enemy")
-        {
+        if (collision.transform.gameObject.tag == "Enemy") {
             AudioSource source = GetComponent<AudioSource>();
             source.PlayOneShot(Explosion);
         }
     }
 
 
-    void OnTriggerEnter2D(Collider2D coll) {
+    void OnTriggerEnter2D(Collider2D coll)
+	{
 	//when the rock hits a coin
 	if (coll.gameObject.tag == "Coin") {
-		coll.gameObject.SetActive (false);
+		coll.gameObject.SetActive(false);
 		AudioSource source = GetComponent<AudioSource>();
 		source.PlayOneShot(Ping);
 		playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier); //increase the players money in playerStats so that it can be accessed throughout the game
 	}
 }
 
-	IEnumerator CountDown (){
+	IEnumerator CountDown ()
+	{
 		//called to start the end of the game, when the rock is rolling backwards without any way of saving itself
-		yield return new WaitForSecondsRealtime (5);
+		yield return new WaitForSecondsRealtime(3);
 		gameOver = true;
-		endGameCanvas.gameObject.SetActive (true); // turn on the upgrade ui
-		inGameCanvas.gameObject.SetActive (false); //turn off in game elements
+		endGameCanvas.gameObject.SetActive(true); // turn on the upgrade ui
+		inGameCanvas.gameObject.SetActive(false); //turn off in game elements
 	}
 
-	void Update(){
-		if(Input.GetKeyDown("d")){
+	void Update()
+	{
+		if(Input.GetKeyDown("d")) {
 			triggerForwardPush = true; //Input.GetKeyDown relies on Update() so we pool the result for use when physics calcs are done in FixedUpdate, this prevents input loss
         }
-		if(Input.GetKeyDown("w")){
+
+		if(Input.GetKeyDown("w")) {
 			triggerUpwardPush = true;
         }
 	}
 
-	void FixedUpdate() {
+	void FixedUpdate()
+	{
 		if (triggerForwardPush) { //if we triggered a forward push in this frame go ahead and apply the force and remove one forward push from our currentForwardPushes
 			if (playerStats.currentForwardPushes != 0) {
 				cacheRB.AddForce (new Vector2 (playerStats.currentForwardPushForce, 0.0f), ForceMode2D.Impulse);
@@ -78,6 +82,7 @@ public class RollingBall : MonoBehaviour {
 				triggerForwardPush = false;
 			}
 		}
+
 		if (triggerUpwardPush) {
 			if (playerStats.currentUpwardPushes != 0) {
 				cacheRB.AddForce (new Vector2 (0.0f, playerStats.currentUpwardPushForce), ForceMode2D.Impulse);
@@ -85,6 +90,7 @@ public class RollingBall : MonoBehaviour {
 				triggerUpwardPush = false;
 			}
 		}
+
 		if ((playerStats.currentUpwardPushes == 0) && (playerStats.currentForwardPushes == 0) && (!gameOver)) { //if we are out of ways to speed up the rock and its going backwards then the game is over
 			if (((cacheRB.velocity.x == 0) || (cacheRB.velocity.x < Vector2.zero.x)) && lives == 1) {
 				StartCoroutine ("CountDown");
