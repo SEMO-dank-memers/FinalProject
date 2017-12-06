@@ -28,4 +28,7 @@ EditorBuildSettings:
     guid: d689d43861ea60e4fb326a0d0f742c21
   - enabled: 1
     path: Assets/Scenes/Stephen Details.unity
-    guid: 00000000000000000000000000000000
+    guid: 1241ea1dfd04a9042a1bb512fe4b209e
+  - enabled: 1
+    path: Assets/Scenes/Third Party Details.unity
+    guid: 980b13ac819e49c459778cfce1f6f1fe
