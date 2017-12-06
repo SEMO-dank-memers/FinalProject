@@ -6,7 +6,8 @@ public static class StateMachine {
     /* States:
 	 * Idle is just standing and doing nothing; used for initializing
 	 * Throw takes place when a Thrower is brave; a rock is thrown
-	 * Attack is used when brawler is brave, or when a troll has max brave value; throws a punch
+	 * Attack is used when brawler is brave, or when a troll has max brave value
+	 * Punch is used after attack, when goblin is near the boulder
 	 * Run is used whenever any goblin is not brave; runs away from boulder
 	 * Crouch is used by ninja when ninja is brave and boulder is up high; crouches to avoid boulder
 	 * Jump is also used by ninja when ninja is brave and boulder is down low; attempts to jump over the boulder
@@ -24,7 +25,7 @@ public static class StateMachine {
 	 */
 	public class Enemy
     {
-        public enum State { IDLE, THROW, ATTACK, RUN, CROUCH, JUMP, PANIC, FLY, CHARGE };
+        public enum State { IDLE, THROW, ATTACK, PUNCH, RUN, CROUCH, JUMP, PANIC, FLY, CHARGE };
         public enum Role { UNASSIGNED, BRAWLER, THROWER, TROLL, NINJA, BIRD };
         public State currentState { get; set; }
         public Role role { get; set; }
