@@ -18,14 +18,17 @@ public static class playerStats{
 	public static int currentPlayerLives; 
 	public static Vector3 playerSize = new Vector3(0.83f, 0.83f, 1.0f);
 	public static float initialForce = 5.0f;
+	public static int maxDistance = 10;
+	public static int currentDistance = 10;
 };
 
 public class RestartGame : MonoBehaviour {
+	public GameObject maxDistanceGUI;
 	public GameObject playerToSave;
 	public Button playButton;
-
 	private static GameObject objectInstance;
 	void Awake(){
+		maxDistanceGUI.GetComponent<Text> ().text = " Max Distance: " + (playerStats.maxDistance - 10);
 		playerStats.currentPlayerLives = playerStats.lives; //lives the rock will have for this play through
 		playerStats.currentForwardPushes = 3; //initial forward pushes
 		playerStats.currentUpwardPushes = 3; //initial upward pushes
@@ -40,9 +43,12 @@ public class RestartGame : MonoBehaviour {
 
 	public void Restart(){
 		//called by the game to restart in order to do another run
+		if (playerStats.currentDistance > playerStats.maxDistance) {
+			playerStats.maxDistance = playerStats.currentDistance;
+		}
+		playerStats.currentDistance = 10;
 		SceneManager.LoadScene ("Main");
 		DestroyObject (gameObject);
 	}
 }
-
 
