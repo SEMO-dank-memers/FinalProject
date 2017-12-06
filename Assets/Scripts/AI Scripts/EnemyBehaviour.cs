@@ -14,6 +14,7 @@ public class EnemyBehaviour : MonoBehaviour
 	public Sprite punch;
 	public Sprite ninja;
 	public Sprite jump;
+	public Sprite run;
 	public string role;
 	private float speed = 5.0f;
 	private float jumpHeight = 2.0f;
