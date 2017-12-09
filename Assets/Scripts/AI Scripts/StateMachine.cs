@@ -57,20 +57,20 @@ public static class StateMachine {
             switch (role)
             {
                 case Role.BRAWLER:
-                    lowerThreshold = 2.0f;
-                    upperThreshold = 5.0f;
+                    lowerThreshold = 1.0f;
+                    upperThreshold = 4.0f;
                     break;
                 case Role.THROWER:
-                    lowerThreshold = 3.5f;
-                    upperThreshold = 7.0f;
+                    lowerThreshold = 3.0f;
+                    upperThreshold = 5.0f;
                     break;
                 case Role.TROLL:
-                    lowerThreshold = 7.0f;
-                    upperThreshold = 9.5f;
+                    lowerThreshold = 4.0f;
+                    upperThreshold = 8.0f;
                     break;
                 case Role.NINJA:
-                    lowerThreshold = 2.0f;
-                    upperThreshold = 7.0f;
+                    lowerThreshold = 1.5f;
+                    upperThreshold = 6.0f;
                     break;
                 default:
                     break; //can just break since we have initialized values

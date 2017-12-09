@@ -70,9 +70,17 @@ public class EnemyBehaviour : MonoBehaviour
 				}
 			}
 		} else if(logic.role == StateMachine.Enemy.Role.BRAWLER) {
-			
+			if (logic.isBrave >= logic.isAfraid) {
+				
+			} else {
+				logic.currentState = StateMachine.Enemy.State.PANIC;
+			}
 		} else if(logic.role == StateMachine.Enemy.Role.THROWER) {
-			
+			if (logic.isBrave >= logic.isAfraid) {
+				
+			} else {
+				logic.currentState = StateMachine.Enemy.State.PANIC;
+			}
 		}
 
 		if (this.transform.position.x - rock.transform.position.x < 4 && this.transform.position.x - rock.transform.position.x > -10) {
@@ -92,13 +100,13 @@ public class EnemyBehaviour : MonoBehaviour
 		} else if (logic.currentState == StateMachine.Enemy.State.JUMP) {
 			Jump();
 		} else if (logic.currentState == StateMachine.Enemy.State.ATTACK) {
-			
+			//Attack();
 		} else if (logic.currentState == StateMachine.Enemy.State.PUNCH) {
-			
+			//Punch();
 		} else if (logic.currentState == StateMachine.Enemy.State.RUN) {
 			Run();
 		} else if (logic.currentState == StateMachine.Enemy.State.THROW) {
-			
+			//Throw();
 		}
 	}
 

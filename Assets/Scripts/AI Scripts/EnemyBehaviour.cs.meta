@@ -1,10 +1,19 @@
 fileFormatVersion: 2
 guid: 625eae04803da5a4eb53281870bb957d
-timeCreated: 1510935843
+timeCreated: 1512808144
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rock: {instanceID: 0}
+  - goblin: {instanceID: 0}
+  - crouch: {instanceID: 0}
+  - panic: {instanceID: 0}
+  - punch: {instanceID: 0}
+  - ninja: {instanceID: 0}
+  - jump: {instanceID: 0}
+  - run: {instanceID: 0}
+  - trollRun: {fileID: 7400000, guid: e38c1149ab3361843959880ad9698eda, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

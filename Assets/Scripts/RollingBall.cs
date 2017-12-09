@@ -13,6 +13,8 @@ public class RollingBall : MonoBehaviour
 	public AudioClip Explosion; //sound to play when hitting an enemy
 	[Tooltip("Sound played when hitting a coin")]
 	public AudioClip Ping; // sound to play when hitting a coin
+	public AudioClip hit0, hit1, hit2, hit3, hit4; //randomly selects an audio to play on hit
+	public AudioClip rolling;
 	//
 
 	//private vars
@@ -35,10 +37,23 @@ public class RollingBall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) //when the rock hits an enemy
     {
-        if (collision.transform.gameObject.tag == "Enemy") {
-            AudioSource source = GetComponent<AudioSource>();
-            source.PlayOneShot(Explosion);
-        }
+		AudioSource source = GetComponent<AudioSource> ();
+		if (collision.transform.gameObject.tag == "Enemy") {
+			int hit = Random.Range (0, 4);
+			//source.PlayOneShot(Explosion);
+			if (hit == 0)
+				source.PlayOneShot (hit0);
+			else if (hit == 1)
+				source.PlayOneShot (hit1);
+			else if (hit == 2)
+				source.PlayOneShot (hit2);
+			else if (hit == 3)
+				source.PlayOneShot (hit3);
+			else
+				source.PlayOneShot (hit4);
+		} else if (collision.transform.gameObject.tag == "Ground") {
+			GetComponent<AudioSource>().PlayOneShot(rolling);
+		}
     }
 
 
