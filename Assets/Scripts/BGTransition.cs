@@ -37,7 +37,7 @@ public class BGTransition : MonoBehaviour
 				} else {
 					isDay = true;
 					t = 0.0f;
-					timeLeft = 25.0f;
+					timeLeft = 10.0f;
 				}
 			}
 		}
