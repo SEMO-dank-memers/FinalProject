@@ -15,6 +15,8 @@ public class RollingBall : MonoBehaviour
 	public AudioClip Ping; // sound to play when hitting a coin
 	[Tooltip("Sound effects played randomly when hitting a enemy")]
 	public AudioClip[] hits = new AudioClip[5]; //randomly selects an audio to play on hit
+	[Tooltip("Sound effect played when using a force push")]
+	public AudioClip pushWind;
 	//
 
 	//private vars
@@ -73,6 +75,7 @@ public class RollingBall : MonoBehaviour
 				cacheRB.AddForce (new Vector2 (playerStats.currentForwardPushForce, 0.0f), ForceMode2D.Impulse);
 				playerStats.currentForwardPushes--;
 				triggerForwardPush = false;
+				GetComponent<AudioSource>().PlayOneShot(pushWind);
 			}
 		}
 
@@ -81,6 +84,7 @@ public class RollingBall : MonoBehaviour
 				cacheRB.AddForce (new Vector2 (0.0f, playerStats.currentUpwardPushForce), ForceMode2D.Impulse);
 				playerStats.currentUpwardPushes--;
 				triggerUpwardPush = false;
+				GetComponent<AudioSource>().PlayOneShot(pushWind);
 			}
 		}
 
