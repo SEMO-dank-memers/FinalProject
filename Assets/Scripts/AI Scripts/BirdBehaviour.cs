@@ -9,17 +9,21 @@ public class BirdBehaviour : MonoBehaviour {
 	StateMachine.Enemy.State state = StateMachine.Enemy.State.FLY;
 	private float speed = 1.5f;
 	Rigidbody2D rb;
+	public Sprite charge;
+
 	// Use this for initialization
 	void Start(){
 		rb = GetComponent<Rigidbody2D>();
 		rock = GameObject.FindGameObjectWithTag("Rock");
-		//this.GetComponent<SpriteRenderer>().sprite = this.GetComponent<StateMachine.Enemy>().GenerateSprite(role); //sets the sprite according to the role
 	}
 
 	// Update is called once per frame, LateUpdate performs calculations before running the commands
 	void LateUpdate(){
 		//run change state logic
 		//set behaviour according to the state
+		if (state == StateMachine.Enemy.State.FLY) {
+			if(BirdTrigger.birdsKilled >= 3) state = StateMachine.Enemy.State.CHARGE;
+		}
 		if(state == StateMachine.Enemy.State.FLY) Fly();
 		else if(state == StateMachine.Enemy.State.CHARGE) Charge();
 	}
@@ -32,8 +36,17 @@ public class BirdBehaviour : MonoBehaviour {
 	}
 	void Charge(){
 		//bird charges towards the rock
-		speed = 3.5f;
+		this.GetComponent<SpriteRenderer>().sprite = charge;
+		speed = 8.0f;
 		transform.position = Vector2.MoveTowards(transform.position, rock.transform.position, speed*Time.deltaTime);
+		if (rock.transform.position.x >= transform.position.x) {
+			GetComponent<SpriteRenderer>().flipX = true;
+		} else GetComponent<SpriteRenderer>().flipX = false;
+	}
+
+	void OnCollisionEnter2D(Collision2D coll){
+		if (coll.gameObject.tag == "Rock")
+			BirdTrigger.birdsKilled += 1;
 	}
 }
 
