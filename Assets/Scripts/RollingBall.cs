@@ -13,8 +13,8 @@ public class RollingBall : MonoBehaviour
 	public AudioClip Explosion; //sound to play when hitting an enemy
 	[Tooltip("Sound played when hitting a coin")]
 	public AudioClip Ping; // sound to play when hitting a coin
-	public AudioClip hit0, hit1, hit2, hit3, hit4; //randomly selects an audio to play on hit
-	public AudioClip rolling;
+	[Tooltip("Sound effects played randomly when hitting a enemy")]
+	public AudioClip[] hits = new AudioClip[5]; //randomly selects an audio to play on hit
 	//
 
 	//private vars
@@ -34,38 +34,16 @@ public class RollingBall : MonoBehaviour
 		this.transform.localScale = new Vector3 (playerStats.playerSize.x, playerStats.playerSize.y, playerStats.playerSize.z); //change the rock's size depending on the players upgrade level
 	}
 
-
-    private void OnCollisionEnter2D(Collision2D collision) //when the rock hits an enemy
-    {
-		AudioSource source = GetComponent<AudioSource> ();
-		if (collision.transform.gameObject.tag == "Enemy") {
-			int hit = Random.Range (0, 4);
-			//source.PlayOneShot(Explosion);
-			if (hit == 0)
-				source.PlayOneShot (hit0);
-			else if (hit == 1)
-				source.PlayOneShot (hit1);
-			else if (hit == 2)
-				source.PlayOneShot (hit2);
-			else if (hit == 3)
-				source.PlayOneShot (hit3);
-			else
-				source.PlayOneShot (hit4);
-		} else if (collision.transform.gameObject.tag == "Ground") {
-			GetComponent<AudioSource>().PlayOneShot(rolling);
-		}
-    }
-
-
     void OnTriggerEnter2D(Collider2D coll)
 	{
-	//when the rock hits a coin
-	if (coll.gameObject.tag == "Coin") {
-		coll.gameObject.SetActive(false);
-		AudioSource source = GetComponent<AudioSource>();
-		source.PlayOneShot(Ping);
-		playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier); //increase the players money in playerStats so that it can be accessed throughout the game
-	}
+		AudioSource source = GetComponent<AudioSource> ();
+		if (coll.gameObject.tag == "Coin") { // when the rock hits a coin
+			coll.gameObject.SetActive (false);
+			source.PlayOneShot (Ping);
+			playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier); //increase the players money in playerStats so that it can be accessed throughout the game
+		} else if (coll.transform.gameObject.tag == "Enemy") { //when the rock hits an enemy
+			source.PlayOneShot (hits [Random.Range(0,4)]);
+		}
 }
 
 	IEnumerator CountDown ()
@@ -107,6 +85,7 @@ public class RollingBall : MonoBehaviour
 		}
 
 		if ((playerStats.currentUpwardPushes == 0) && (playerStats.currentForwardPushes == 0) && (!gameOver)) { //if we are out of ways to speed up the rock and its going backwards then the game is over
+			AudioSource source = GetComponent<AudioSource> ();
 			if (((cacheRB.velocity.x == 0) || (cacheRB.velocity.x < Vector2.zero.x)) && lives == 1) {
 				StartCoroutine ("CountDown");
 			} else if ((cacheRB.velocity.x == 0) || (cacheRB.velocity.x < Vector2.zero.x)) {//if the ball is rolling backwards with no way to save itself but we have a life then use up one live and throw the rock forward
