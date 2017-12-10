@@ -15,6 +15,8 @@ public class RollingBall : MonoBehaviour
 	public AudioClip Ping; // sound to play when hitting a coin
 	public AudioClip hit0, hit1, hit2, hit3, hit4; //randomly selects an audio to play on hit
 	public AudioClip rolling;
+	public AudioClip pushWind;
+	public AudioClip lastWind;
 	//
 
 	//private vars
@@ -95,6 +97,7 @@ public class RollingBall : MonoBehaviour
 				cacheRB.AddForce (new Vector2 (playerStats.currentForwardPushForce, 0.0f), ForceMode2D.Impulse);
 				playerStats.currentForwardPushes--;
 				triggerForwardPush = false;
+				GetComponent<AudioSource>().PlayOneShot(pushWind);
 			}
 		}
 
@@ -103,6 +106,7 @@ public class RollingBall : MonoBehaviour
 				cacheRB.AddForce (new Vector2 (0.0f, playerStats.currentUpwardPushForce), ForceMode2D.Impulse);
 				playerStats.currentUpwardPushes--;
 				triggerUpwardPush = false;
+				GetComponent<AudioSource>().PlayOneShot(pushWind);
 			}
 		}
 
@@ -113,6 +117,7 @@ public class RollingBall : MonoBehaviour
 				lives--;
 				playerStats.currentPlayerLives--;
 				cacheRB.AddForce (new Vector2 (30.0f, 0.0f), ForceMode2D.Impulse);
+				GetComponent<AudioSource>().PlayOneShot(lastWind);
 			}
 		}
 	}
