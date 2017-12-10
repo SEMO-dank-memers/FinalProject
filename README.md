@@ -37,3 +37,6 @@ And that's pretty much it. Play it in the editor or build it, I don't care.
 ## Final Words
 
 This is a final project, not a professional game, so don't judge it too harshly. Also, have fun!
+
+## Link to the Trailer
+https://www.youtube.com/watch?v=GoUwdNGv3qw
