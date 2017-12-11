@@ -110,6 +110,7 @@ public class EnemyBehaviour : MonoBehaviour
 		}
 	}
 
+	bool isTurned = false;
 	void setSprite()
 	{
 		if (logic.currentState == StateMachine.Enemy.State.PANIC) {
@@ -125,7 +126,11 @@ public class EnemyBehaviour : MonoBehaviour
 		} else if (logic.currentState == StateMachine.Enemy.State.PUNCH) {
 			this.GetComponent<SpriteRenderer>().sprite = punch;
 		} else if (logic.currentState == StateMachine.Enemy.State.RUN) {
-			this.GetComponent<SpriteRenderer>().sprite = panic;
+			if (!isTurned) {
+				this.GetComponent<SpriteRenderer>().flipX = false;
+				isTurned = true;
+			}
+			this.GetComponent<SpriteRenderer>().sprite = run;
 		} else if (logic.currentState == StateMachine.Enemy.State.THROW) {
 			this.GetComponent<SpriteRenderer>().sprite = panic;
 		}
@@ -193,7 +198,7 @@ public class EnemyBehaviour : MonoBehaviour
 			runCounter++;
 		}
 
-		if (runCounter > 15)
+		if (runCounter > 5)
 			runCall = true;
 	}
     
