@@ -192,7 +192,7 @@ public class EnemyBehaviour : MonoBehaviour
 		print ("It was fucking majestic");
     }
     
-	public uint counter = 0;
+	private uint counter = 0;
 	bool wasCalled = false;
 	Vector2 first, goal;
 	private float t = 0; //time
