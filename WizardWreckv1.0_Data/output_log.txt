@@ -1,0 +1,374 @@
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   23.21.13.8843
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.016 seconds
+Platform assembly: C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Owner\Desktop\FinalProject\WizardWreckv1.0_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.903511 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 304.805664 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 333.
+Total: 0.386703 ms (FindLiveObjects: 0.017427 ms CreateObjectMapping: 0.012619 ms MarkObjects: 0.139417 ms  DeleteObjects: 0.216037 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.230045 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 3.204505 ms (FindLiveObjects: 0.100356 ms CreateObjectMapping: 0.031849 ms MarkObjects: 0.481351 ms  DeleteObjects: 2.590646 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.401651 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.740055 ms (FindLiveObjects: 0.099154 ms CreateObjectMapping: 0.049577 ms MarkObjects: 0.561276 ms  DeleteObjects: 0.029746 ms)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.599359 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.733746 ms (FindLiveObjects: 0.127098 ms CreateObjectMapping: 0.033051 ms MarkObjects: 0.529727 ms  DeleteObjects: 0.043568 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.372205 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.634290 ms (FindLiveObjects: 0.088037 ms CreateObjectMapping: 0.032450 ms MarkObjects: 0.484056 ms  DeleteObjects: 0.028845 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.519735 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.668243 ms (FindLiveObjects: 0.127098 ms CreateObjectMapping: 0.032450 ms MarkObjects: 0.462722 ms  DeleteObjects: 0.045370 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.291679 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.736750 ms (FindLiveObjects: 0.108769 ms CreateObjectMapping: 0.033051 ms MarkObjects: 0.564882 ms  DeleteObjects: 0.029746 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.352674 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.902309 ms (FindLiveObjects: 0.132506 ms CreateObjectMapping: 0.031849 ms MarkObjects: 0.704900 ms  DeleteObjects: 0.032751 ms)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.337050 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.594027 ms (FindLiveObjects: 0.087737 ms CreateObjectMapping: 0.032150 ms MarkObjects: 0.442891 ms  DeleteObjects: 0.030948 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.402252 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.789032 ms (FindLiveObjects: 0.121089 ms CreateObjectMapping: 0.033953 ms MarkObjects: 0.595830 ms  DeleteObjects: 0.037558 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.169688 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.743361 ms (FindLiveObjects: 0.125596 ms CreateObjectMapping: 0.032150 ms MarkObjects: 0.559774 ms  DeleteObjects: 0.024938 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.273651 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.592825 ms (FindLiveObjects: 0.115680 ms CreateObjectMapping: 0.031248 ms MarkObjects: 0.422760 ms  DeleteObjects: 0.022835 ms)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.283867 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.636093 ms (FindLiveObjects: 0.127098 ms CreateObjectMapping: 0.034253 ms MarkObjects: 0.449802 ms  DeleteObjects: 0.024338 ms)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.528749 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.609351 ms (FindLiveObjects: 0.105765 ms CreateObjectMapping: 0.032751 ms MarkObjects: 0.446797 ms  DeleteObjects: 0.023737 ms)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.209350 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.625276 ms (FindLiveObjects: 0.103962 ms CreateObjectMapping: 0.031248 ms MarkObjects: 0.465126 ms  DeleteObjects: 0.024037 ms)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.407960 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.642102 ms (FindLiveObjects: 0.124995 ms CreateObjectMapping: 0.036356 ms MarkObjects: 0.456412 ms  DeleteObjects: 0.023737 ms)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.487284 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.767098 ms (FindLiveObjects: 0.120187 ms CreateObjectMapping: 0.032751 ms MarkObjects: 0.572694 ms  DeleteObjects: 0.040863 ms)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.956055 ms
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2237.
+Total: 0.671849 ms (FindLiveObjects: 0.162253 ms CreateObjectMapping: 0.033652 ms MarkObjects: 0.445896 ms  DeleteObjects: 0.028845 ms)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bird hit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 3774 -> priority: 1 
+  Thread -> id: 1b08 -> priority: 1 
