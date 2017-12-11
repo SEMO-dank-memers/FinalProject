@@ -81,6 +81,7 @@ public class EnemyBehaviour : MonoBehaviour
 				if (logic.isBrave >= logic.isAfraid) {
 					logic.currentState = StateMachine.Enemy.State.ATTACK;
 				} else {
+					punchThing.enabled = false;
 					logic.currentState = StateMachine.Enemy.State.PANIC;
 				}
 			} else {
