@@ -29,7 +29,6 @@ public class DistanceUpdater : MonoBehaviour {
 			playerStats.currentDistance = distance; 
 		}
 		distance = (int)player.transform.position.x;
-		Debug.Log (distance, gameObject);
 		if ((((distance-9) % 300) == 0) || (lerping == true)) {
 			if (isDay) {
 				lerpNight ();

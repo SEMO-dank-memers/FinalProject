@@ -42,7 +42,7 @@ public class RollingBall : MonoBehaviour
 		if (coll.gameObject.tag == "Coin") { // when the rock hits a coin
 			coll.gameObject.SetActive (false);
 			source.PlayOneShot (Ping);
-			playerStats.playerMoney = playerStats.playerMoney + (50 * playerStats.moneyMultiplier); //increase the players money in playerStats so that it can be accessed throughout the game
+			playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier); //increase the players money in playerStats so that it can be accessed throughout the game
 		} else if (coll.transform.gameObject.tag == "Enemy") { //when the rock hits an enemy
 			source.PlayOneShot (hits [Random.Range(0,4)]);
 		}
