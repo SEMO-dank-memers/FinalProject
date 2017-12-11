@@ -175,13 +175,26 @@ public class EnemyBehaviour : MonoBehaviour
 
     }
 
+	private uint runCounter = 0;
+
+	bool runCall = true;
+
 	void Run()
     {
 		/* gets position of the rock and moves away from it, might need to be careful to not
          * let them move into the air. They need to stay on the ground/
          * maybe have different speeds depending on the role
          */
-		rb.AddForce(new Vector2(1.0f, -0.1f), ForceMode2D.Impulse);
+		if (runCall) {
+			rb.AddForce(new Vector2(1.0f, -0.1f), ForceMode2D.Impulse);
+			runCounter = 0;
+			runCall = false;
+		} else {
+			runCounter++;
+		}
+
+		if (runCounter > 15)
+			runCall = true;
 	}
     
 	void Throw()
@@ -193,7 +206,6 @@ public class EnemyBehaviour : MonoBehaviour
     }
     
 	private uint counter = 0;
-	bool wasCalled = false;
 	Vector2 first, goal;
 	private float t = 0; //time
 
