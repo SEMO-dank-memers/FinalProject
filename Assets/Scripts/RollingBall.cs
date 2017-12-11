@@ -46,6 +46,10 @@ public class RollingBall : MonoBehaviour
 		} else if (coll.transform.gameObject.tag == "Enemy") { //when the rock hits an enemy
 			playerStats.playerMoney = playerStats.playerMoney + (playerStats.moneyMultiplier);
 			source.PlayOneShot (hits [Random.Range(0,4)]);
+			if (coll.gameObject.name == "Bird") {
+				Debug.Log ("Bird hit!");
+				BirdTrigger.birds.killed += 1;
+			}
 		}
 }
 

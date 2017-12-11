@@ -46,7 +46,7 @@ public class RestartGame : MonoBehaviour {
 		if (playerStats.currentDistance > playerStats.maxDistance) {
 			playerStats.maxDistance = playerStats.currentDistance;
 		}
-		BirdTrigger.birdsKilled = 0;
+		BirdTrigger.birds.killed = 0;
 		playerStats.currentDistance = 10;
 		SceneManager.LoadScene ("Main");
 		DestroyObject (gameObject);

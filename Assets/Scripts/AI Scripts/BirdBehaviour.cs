@@ -5,7 +5,7 @@ using UnityEngine;
 public class BirdBehaviour : MonoBehaviour {
 	
 	GameObject rock;
-	StateMachine.Enemy.Role role = StateMachine.Enemy.Role.BIRD;
+	//StateMachine.Enemy.Role role = StateMachine.Enemy.Role.BIRD;
 	StateMachine.Enemy.State state = StateMachine.Enemy.State.FLY;
 	private float speed = 1.5f;
 	Rigidbody2D rb;
@@ -22,7 +22,7 @@ public class BirdBehaviour : MonoBehaviour {
 		//run change state logic
 		//set behaviour according to the state
 		if (state == StateMachine.Enemy.State.FLY) {
-			if(BirdTrigger.birdsKilled >= 3) state = StateMachine.Enemy.State.CHARGE;
+			if(BirdTrigger.birds.killed > 1) state = StateMachine.Enemy.State.CHARGE;
 		}
 		if(state == StateMachine.Enemy.State.FLY) Fly();
 		else if(state == StateMachine.Enemy.State.CHARGE) Charge();
@@ -42,11 +42,6 @@ public class BirdBehaviour : MonoBehaviour {
 		if (rock.transform.position.x >= transform.position.x) {
 			GetComponent<SpriteRenderer>().flipX = true;
 		} else GetComponent<SpriteRenderer>().flipX = false;
-	}
-
-	void OnCollisionEnter2D(Collision2D coll){
-		if (coll.gameObject.tag == "Rock")
-			BirdTrigger.birdsKilled += 1;
 	}
 }
 
