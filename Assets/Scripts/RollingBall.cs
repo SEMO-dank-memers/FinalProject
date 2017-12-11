@@ -44,6 +44,7 @@ public class RollingBall : MonoBehaviour
 			source.PlayOneShot (Ping);
 			playerStats.playerMoney = playerStats.playerMoney + (2 * playerStats.moneyMultiplier); //increase the players money in playerStats so that it can be accessed throughout the game
 		} else if (coll.transform.gameObject.tag == "Enemy") { //when the rock hits an enemy
+			playerStats.playerMoney = playerStats.playerMoney + (playerStats.moneyMultiplier);
 			source.PlayOneShot (hits [Random.Range(0,4)]);
 		}
 }

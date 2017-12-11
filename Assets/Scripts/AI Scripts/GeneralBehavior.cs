@@ -12,7 +12,6 @@ public class GeneralBehavior : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.gameObject.tag == "Rock") {
 			gameObject.SetActive(false);
-			playerStats.playerMoney = playerStats.playerMoney + (playerStats.moneyMultiplier); //increase the players money in playerStats so that it can be accessed throughout the game
 		}
 	}
 

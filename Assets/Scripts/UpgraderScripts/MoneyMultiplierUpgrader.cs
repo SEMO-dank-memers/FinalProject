@@ -40,7 +40,7 @@ public class MoneyMultiplierUpgrader : MonoBehaviour {
 			upgradeLevel++;
 			Lights [upgradeLevel - 1].color = c;
 			requiredMoney = requiredMoney * 2;
-			playerStats.moneyMultiplier = upgradeLevel + 1; // increase the moenyMultiplier value, we multiply this by the initial value of each coin (2) and add that amount to player money each time a coin is picked up
+			playerStats.moneyMultiplier++; // increase the moenyMultiplier value, we multiply this by the initial value of each coin (2) and add that amount to player money each time a coin is picked up
 			//set up the text and upgrade lights based off of our current level
 			if (upgradeLevel != 5) {
 				thisButton.text = "Money Multiplier: " + requiredMoney;
