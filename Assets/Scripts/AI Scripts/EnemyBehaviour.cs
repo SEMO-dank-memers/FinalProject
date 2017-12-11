@@ -7,7 +7,6 @@ public class EnemyBehaviour : MonoBehaviour
 	//public GameObject enemy;
     public GameObject rock;
 	private Rigidbody2D rb;
-	public Transform goblin;
 	private StateMachine.Enemy logic;
 	public Sprite crouch;
 	public Sprite panic;
@@ -60,6 +59,7 @@ public class EnemyBehaviour : MonoBehaviour
 				}
 			} else {
 				jumpCall = true; //out of range, reset jump
+				logic.currentState = StateMachine.Enemy.State.IDLE;
 			}
 		} else if(logic.role == StateMachine.Enemy.Role.TROLL) {
 			if (this.transform.position.x - rock.transform.position.x < 4 && this.transform.position.x - rock.transform.position.x > -10) {
