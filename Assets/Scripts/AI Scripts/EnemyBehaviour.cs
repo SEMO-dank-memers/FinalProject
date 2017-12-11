@@ -8,6 +8,7 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject rock;
 	private Rigidbody2D rb;
 	private StateMachine.Enemy logic;
+	private CircleCollider2D punchThing;
 	public Sprite crouch;
 	public Sprite panic;
 	public Sprite punch;
@@ -33,8 +34,11 @@ public class EnemyBehaviour : MonoBehaviour
 			logic.role = StateMachine.Enemy.Role.TROLL;
 		else if (role == "ninja")
 			logic.role = StateMachine.Enemy.Role.NINJA;
-		else if (role == "brawler")
+		else if (role == "brawler") {
 			logic.role = StateMachine.Enemy.Role.BRAWLER;
+			punchThing = this.GetComponent<CircleCollider2D>();
+			punchThing.enabled = false;
+		}
 
 		logic.GenerateEnemy();
 	}
@@ -43,10 +47,11 @@ public class EnemyBehaviour : MonoBehaviour
 
     //Update is called once per frame, LateUpdate performs calculations before running the commands
     void LateUpdate () {
+		bool isInRange = this.transform.position.x - rock.transform.position.x < 4 && this.transform.position.x - rock.transform.position.x > -10;
 		//run change state logic
     	//set behaviour according to the state
 		if (logic.role == StateMachine.Enemy.Role.NINJA) {
-			if (this.transform.position.x - rock.transform.position.x < 4 && this.transform.position.x - rock.transform.position.x > -10) {
+			if (isInRange) {
 				if (logic.isBrave >= logic.isAfraid) {
 					if (((rock.transform.position.y) > (this.transform.position.y + 1)) && ((rock.transform.position.x) <= (this.transform.position.x))) {
 						logic.currentState = StateMachine.Enemy.State.CROUCH;
@@ -62,18 +67,25 @@ public class EnemyBehaviour : MonoBehaviour
 				logic.currentState = StateMachine.Enemy.State.IDLE;
 			}
 		} else if(logic.role == StateMachine.Enemy.Role.TROLL) {
-			if (this.transform.position.x - rock.transform.position.x < 4 && this.transform.position.x - rock.transform.position.x > -10) {
+			if (isInRange) {
 				if (logic.isBrave >= logic.isAfraid) {
 					logic.currentState = StateMachine.Enemy.State.RUN;
 				} else {
 					logic.currentState = StateMachine.Enemy.State.PANIC;
 				}
+			} else {
+				logic.currentState = StateMachine.Enemy.State.IDLE;
 			}
 		} else if(logic.role == StateMachine.Enemy.Role.BRAWLER) {
-			if (logic.isBrave >= logic.isAfraid) {
-				
+			if (isInRange) {
+				if (logic.isBrave >= logic.isAfraid) {
+					logic.currentState = StateMachine.Enemy.State.ATTACK;
+				} else {
+					logic.currentState = StateMachine.Enemy.State.PANIC;
+				}
 			} else {
-				logic.currentState = StateMachine.Enemy.State.PANIC;
+				logic.currentState = StateMachine.Enemy.State.IDLE;
+				punchThing.enabled = false;
 			}
 		} else if(logic.role == StateMachine.Enemy.Role.THROWER) {
 			if (logic.isBrave >= logic.isAfraid) {
@@ -83,7 +95,7 @@ public class EnemyBehaviour : MonoBehaviour
 			}
 		}
 
-		if (this.transform.position.x - rock.transform.position.x < 4 && this.transform.position.x - rock.transform.position.x > -10) {
+		if (isInRange) {
 			DoAction();
 		}
     }
@@ -100,7 +112,7 @@ public class EnemyBehaviour : MonoBehaviour
 		} else if (logic.currentState == StateMachine.Enemy.State.JUMP) {
 			Jump();
 		} else if (logic.currentState == StateMachine.Enemy.State.ATTACK) {
-			//Attack();
+			Attack();
 		} else if (logic.currentState == StateMachine.Enemy.State.PUNCH) {
 			//Punch();
 		} else if (logic.currentState == StateMachine.Enemy.State.RUN) {
@@ -122,7 +134,7 @@ public class EnemyBehaviour : MonoBehaviour
 		} else if (logic.currentState == StateMachine.Enemy.State.JUMP) {
 			//set this in the fucntion itself
 		} else if (logic.currentState == StateMachine.Enemy.State.ATTACK) {
-			//do nothing
+			this.GetComponent<SpriteRenderer>().sprite = punch;
 		} else if (logic.currentState == StateMachine.Enemy.State.PUNCH) {
 			this.GetComponent<SpriteRenderer>().sprite = punch;
 		} else if (logic.currentState == StateMachine.Enemy.State.RUN) {
@@ -165,13 +177,25 @@ public class EnemyBehaviour : MonoBehaviour
 		}
 	}
 
+	private uint attackCounter = 0;
+	bool attackCall = true;
+
 	void Attack()
 	{
 		//gets the position of the rock and moves towards it. 
 		//when at a close distance, throw a punch.
-		Vector2 goal = new Vector2(rock.transform.position.x, this.transform.position.y);
-		float speed = 1.0f;
-		this.transform.Translate(goal.normalized * speed * Time.deltaTime);
+		punchThing.enabled = true;
+
+		if (attackCall) {
+			rb.AddForce(new Vector2(-1.0f, -0.1f), ForceMode2D.Impulse);
+			attackCounter = 0;
+			attackCall = false;
+		} else {
+			attackCounter++;
+		}
+
+		if (attackCounter > 3)
+			attackCall = true;
 	}
     
 	void Punch()
@@ -181,7 +205,6 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
 	private uint runCounter = 0;
-
 	bool runCall = true;
 
 	void Run()

@@ -6,7 +6,9 @@ public class GeneralBehavior : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll)
 	{
-		//do nothing
+		if (coll.gameObject.tag == "Rock") {
+			gameObject.SetActive(false);
+		}
     }
 
 	void OnTriggerEnter2D(Collider2D coll) {
